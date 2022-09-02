@@ -1,3 +1,9 @@
+
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionAdapter;
+import javax.swing.JFrame;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -13,7 +19,7 @@ public class HomePage extends javax.swing.JFrame {
      * Creates new form HomePage
      */
     public HomePage() {
-        initComponents();
+        initComponents();  
     }
 
     /**
@@ -53,9 +59,9 @@ public class HomePage extends javax.swing.JFrame {
 
         backgroundPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel3.setBackground(new java.awt.Color(102, 0, 102));
+        jPanel3.setBackground(new java.awt.Color(0, 176, 155));
 
-        jPanel2.setBackground(new java.awt.Color(102, 0, 102));
+        jPanel2.setBackground(new java.awt.Color(0, 176, 155));
 
         SLC_Title.setFont(new java.awt.Font("Lucida Handwriting", 0, 18)); // NOI18N
         SLC_Title.setForeground(new java.awt.Color(255, 255, 255));
@@ -83,7 +89,9 @@ public class HomePage extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        Employee.setBackground(new java.awt.Color(102, 0, 102));
+        jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
+
+        Employee.setBackground(new java.awt.Color(0, 176, 155));
 
         emp_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Employee Icon.png"))); // NOI18N
 
@@ -114,7 +122,7 @@ public class HomePage extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        Suppliers.setBackground(new java.awt.Color(102, 0, 102));
+        Suppliers.setBackground(new java.awt.Color(0, 176, 155));
 
         supp_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Supplier Icon.png"))); // NOI18N
 
@@ -145,7 +153,7 @@ public class HomePage extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        Menu.setBackground(new java.awt.Color(102, 0, 102));
+        Menu.setBackground(new java.awt.Color(0, 176, 155));
 
         menu_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/food-tray.png"))); // NOI18N
 
@@ -176,7 +184,7 @@ public class HomePage extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        Orders.setBackground(new java.awt.Color(102, 0, 102));
+        Orders.setBackground(new java.awt.Color(0, 176, 155));
 
         order_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/order icon.png"))); // NOI18N
 
@@ -207,7 +215,7 @@ public class HomePage extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        Payment.setBackground(new java.awt.Color(102, 0, 102));
+        Payment.setBackground(new java.awt.Color(0, 176, 155));
 
         payment_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/payment icon.png"))); // NOI18N
 
@@ -245,17 +253,16 @@ public class HomePage extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator1)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Employee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Suppliers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Menu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Orders, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Payment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addGap(6, 6, 6)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Employee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Suppliers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Menu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Orders, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Payment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -274,10 +281,10 @@ public class HomePage extends javax.swing.JFrame {
                 .addComponent(Orders, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Payment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(258, Short.MAX_VALUE))
+                .addContainerGap(268, Short.MAX_VALUE))
         );
 
-        backgroundPanel.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 690));
+        backgroundPanel.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 700));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -289,10 +296,10 @@ public class HomePage extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 690, Short.MAX_VALUE)
+            .addGap(0, 700, Short.MAX_VALUE)
         );
 
-        backgroundPanel.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 810, 690));
+        backgroundPanel.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 810, 700));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -342,6 +349,9 @@ public class HomePage extends javax.swing.JFrame {
             }
         });
     }
+    private int x;
+    private int y;
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Employee;
