@@ -69,6 +69,9 @@ public class HomePage extends javax.swing.JFrame {
         empDesgn = new javax.swing.JTextField();
         addEmpButton = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
+        empID = new javax.swing.JTextField();
+        delEmpButton = new javax.swing.JButton();
         suppliersTab = new javax.swing.JPanel();
         suppliersTabbedPane = new javax.swing.JTabbedPane();
         suppliersHome = new javax.swing.JPanel();
@@ -418,6 +421,11 @@ public class HomePage extends javax.swing.JFrame {
 
         delEmployee.setkEndColor(new java.awt.Color(172, 182, 229));
         delEmployee.setkStartColor(new java.awt.Color(116, 235, 213));
+        delEmployee.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                delEmployeeMouseClicked(evt);
+            }
+        });
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/delete employee icon.png"))); // NOI18N
 
@@ -576,7 +584,7 @@ public class HomePage extends javax.swing.JFrame {
         empDesgn.setBackground(new java.awt.Color(242, 242, 242));
         empDesgn.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
 
-        addEmpButton.setBackground(new java.awt.Color(0, 0, 0,100));
+        addEmpButton.setBackground(new java.awt.Color(0, 0, 0));
         addEmpButton.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
         addEmpButton.setForeground(new java.awt.Color(255, 255, 255));
         addEmpButton.setText("Add Employee");
@@ -593,11 +601,11 @@ public class HomePage extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addEmpLayout.createSequentialGroup()
                 .addGap(46, 46, 46)
                 .addGroup(addEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(addEmpButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
                     .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
-                    .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(addEmpButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(34, 34, 34)
                 .addGroup(addEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(empName, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -627,22 +635,54 @@ public class HomePage extends javax.swing.JFrame {
                     .addComponent(empDesgn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(54, 54, 54)
                 .addComponent(addEmpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(333, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         employeeTabbedPanel.addTab("tab2", addEmp);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
+        jLabel17.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(0, 51, 51));
+        jLabel17.setText("Enter ID of the Employee");
+
+        empID.setBackground(new java.awt.Color(242, 242, 242));
+        empID.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
+
+        delEmpButton.setBackground(new java.awt.Color(0, 0, 0));
+        delEmpButton.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
+        delEmpButton.setForeground(new java.awt.Color(255, 255, 255));
+        delEmpButton.setText("Delete Employee");
+        delEmpButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delEmpButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(delEmpButton)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(43, 43, 43)
+                        .addComponent(empID, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(415, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(78, 78, 78)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(empID, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(61, 61, 61)
+                .addComponent(delEmpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         employeeTabbedPanel.addTab("tab3", jPanel3);
@@ -980,6 +1020,7 @@ public class HomePage extends javax.swing.JFrame {
 
     private void EmployeeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EmployeeMouseClicked
         mainTabbedPane.setSelectedIndex(1);
+        employeeTabbedPanel.setSelectedIndex(0); //Check if bug is present
         Employee.setBackground(new Color(191,224,233));
         Suppliers.setBackground(new Color(0,172,228));
         Menu.setBackground(new Color(0,172,228));
@@ -1026,6 +1067,25 @@ public class HomePage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_addSupplierMouseClicked
 
+    private void delEmployeeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_delEmployeeMouseClicked
+        employeeTabbedPanel.setSelectedIndex(2);
+    }//GEN-LAST:event_delEmployeeMouseClicked
+
+    private void delEmpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delEmpButtonActionPerformed
+        int empid = Integer.parseInt(empID.getText());
+        try{
+            Connection connection=DriverManager.getConnection(DB_URL,USER,PASS);
+            Statement statement = connection.createStatement();
+            String query = "delete from employees where EMP_ID="+empid;
+            statement.executeUpdate(query);
+            
+        }
+        catch(SQLException se){
+            se.printStackTrace();
+        }
+        
+    }//GEN-LAST:event_delEmpButtonActionPerformed
+
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -1046,11 +1106,13 @@ public class HomePage extends javax.swing.JFrame {
     private keeptoo.KGradientPanel addEmployee;
     private keeptoo.KGradientPanel addSupplier;
     private javax.swing.JPanel backgroundPanel;
+    private javax.swing.JButton delEmpButton;
     private keeptoo.KGradientPanel delEmployee;
     private keeptoo.KGradientPanel deleteSupplier;
     private javax.swing.JTextField empAddress;
     private javax.swing.JTextField empContact;
     private javax.swing.JTextField empDesgn;
+    private javax.swing.JTextField empID;
     private javax.swing.JTextField empName;
     private javax.swing.JLabel emp_icon;
     private javax.swing.JLabel emp_text;
@@ -1066,6 +1128,7 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
