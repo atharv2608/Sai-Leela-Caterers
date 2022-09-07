@@ -68,10 +68,26 @@ public class HomePage extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         empDesgn = new javax.swing.JTextField();
         addEmpButton = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
+        delEmp = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         empID = new javax.swing.JTextField();
         delEmpButton = new javax.swing.JButton();
+        updateEmp = new javax.swing.JPanel();
+        jLabel26 = new javax.swing.JLabel();
+        updateEmpID = new javax.swing.JTextField();
+        jLabel27 = new javax.swing.JLabel();
+        updateEmpName = new javax.swing.JTextField();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        updateEmpContact = new javax.swing.JTextField();
+        updateEmpAdd = new javax.swing.JTextField();
+        updateEmpDesgn = new javax.swing.JTextField();
+        updateEmpButton = new javax.swing.JButton();
+        searchEmp = new javax.swing.JPanel();
+        jLabel31 = new javax.swing.JLabel();
+        empID1 = new javax.swing.JTextField();
+        searchEmpButton = new javax.swing.JButton();
         suppliersTab = new javax.swing.JPanel();
         suppliersTabbedPane = new javax.swing.JTabbedPane();
         suppliersHome = new javax.swing.JPanel();
@@ -87,6 +103,29 @@ public class HomePage extends javax.swing.JFrame {
         updateSupplier = new keeptoo.KGradientPanel();
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
+        addSup = new javax.swing.JPanel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        supName = new javax.swing.JTextField();
+        supContact = new javax.swing.JTextField();
+        supplies = new javax.swing.JTextField();
+        addSupButton = new javax.swing.JButton();
+        delSup = new javax.swing.JPanel();
+        jLabel35 = new javax.swing.JLabel();
+        delSupButton = new javax.swing.JButton();
+        supID = new javax.swing.JTextField();
+        updateSup = new javax.swing.JPanel();
+        jLabel36 = new javax.swing.JLabel();
+        updateSupID = new javax.swing.JTextField();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        updatedSupName = new javax.swing.JTextField();
+        updatedSupContact = new javax.swing.JTextField();
+        updatedSupSupplies = new javax.swing.JTextField();
+        updateSupButton = new javax.swing.JButton();
+        searchSup = new javax.swing.JPanel();
         menuTab = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         ordersTab = new javax.swing.JPanel();
@@ -640,7 +679,7 @@ public class HomePage extends javax.swing.JFrame {
 
         employeeTabbedPanel.addTab("tab2", addEmp);
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        delEmp.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel17.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(0, 51, 51));
@@ -659,25 +698,25 @@ public class HomePage extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout delEmpLayout = new javax.swing.GroupLayout(delEmp);
+        delEmp.setLayout(delEmpLayout);
+        delEmpLayout.setHorizontalGroup(
+            delEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(delEmpLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(delEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(delEmpButton)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addGroup(delEmpLayout.createSequentialGroup()
                         .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(43, 43, 43)
                         .addComponent(empID, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(415, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        delEmpLayout.setVerticalGroup(
+            delEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(delEmpLayout.createSequentialGroup()
                 .addGap(78, 78, 78)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(delEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(empID, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(61, 61, 61)
@@ -685,7 +724,154 @@ public class HomePage extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        employeeTabbedPanel.addTab("tab3", jPanel3);
+        employeeTabbedPanel.addTab("tab3", delEmp);
+
+        updateEmp.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel26.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(0, 51, 51));
+        jLabel26.setText("Enter ID");
+
+        updateEmpID.setBackground(new java.awt.Color(242, 242, 242));
+        updateEmpID.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
+
+        jLabel27.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(0, 51, 51));
+        jLabel27.setText("Enter Name");
+
+        updateEmpName.setBackground(new java.awt.Color(242, 242, 242));
+        updateEmpName.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
+
+        jLabel28.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(0, 51, 51));
+        jLabel28.setText("Enter Contact");
+
+        jLabel29.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(0, 51, 51));
+        jLabel29.setText("Enter Address");
+
+        jLabel30.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(0, 51, 51));
+        jLabel30.setText("Enter Designation");
+
+        updateEmpContact.setBackground(new java.awt.Color(242, 242, 242));
+        updateEmpContact.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
+
+        updateEmpAdd.setBackground(new java.awt.Color(242, 242, 242));
+        updateEmpAdd.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
+
+        updateEmpDesgn.setBackground(new java.awt.Color(242, 242, 242));
+        updateEmpDesgn.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
+
+        updateEmpButton.setBackground(new java.awt.Color(0, 0, 0));
+        updateEmpButton.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
+        updateEmpButton.setForeground(new java.awt.Color(255, 255, 255));
+        updateEmpButton.setText("Update");
+        updateEmpButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateEmpButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout updateEmpLayout = new javax.swing.GroupLayout(updateEmp);
+        updateEmp.setLayout(updateEmpLayout);
+        updateEmpLayout.setHorizontalGroup(
+            updateEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(updateEmpLayout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addGroup(updateEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(updateEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel28, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
+                        .addComponent(jLabel29, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE))
+                    .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(updateEmpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(updateEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(updateEmpID, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(updateEmpName, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(updateEmpContact, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(updateEmpAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(updateEmpDesgn, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(497, Short.MAX_VALUE))
+        );
+        updateEmpLayout.setVerticalGroup(
+            updateEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(updateEmpLayout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addGroup(updateEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel26)
+                    .addComponent(updateEmpID, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
+                .addGroup(updateEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(updateEmpName, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(updateEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(updateEmpContact, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(updateEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(updateEmpAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(updateEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(updateEmpDesgn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(47, 47, 47)
+                .addComponent(updateEmpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(298, Short.MAX_VALUE))
+        );
+
+        employeeTabbedPanel.addTab("tab4", updateEmp);
+
+        searchEmp.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel31.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(0, 51, 51));
+        jLabel31.setText("Enter ID of the Employee");
+
+        empID1.setBackground(new java.awt.Color(242, 242, 242));
+        empID1.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
+
+        searchEmpButton.setBackground(new java.awt.Color(0, 0, 0));
+        searchEmpButton.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
+        searchEmpButton.setForeground(new java.awt.Color(255, 255, 255));
+        searchEmpButton.setText("Search");
+        searchEmpButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchEmpButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout searchEmpLayout = new javax.swing.GroupLayout(searchEmp);
+        searchEmp.setLayout(searchEmpLayout);
+        searchEmpLayout.setHorizontalGroup(
+            searchEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(searchEmpLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addGroup(searchEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(searchEmpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(searchEmpLayout.createSequentialGroup()
+                        .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(43, 43, 43)
+                        .addComponent(empID1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(415, Short.MAX_VALUE))
+        );
+        searchEmpLayout.setVerticalGroup(
+            searchEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(searchEmpLayout.createSequentialGroup()
+                .addGap(78, 78, 78)
+                .addGroup(searchEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(empID1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(searchEmpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(495, Short.MAX_VALUE))
+        );
+
+        employeeTabbedPanel.addTab("tab5", searchEmp);
 
         javax.swing.GroupLayout employeeTabLayout = new javax.swing.GroupLayout(employeeTab);
         employeeTab.setLayout(employeeTabLayout);
@@ -747,8 +933,13 @@ public class HomePage extends javax.swing.JFrame {
                 .addContainerGap(32, Short.MAX_VALUE))
         );
 
-        deleteSupplier.setkEndColor(new java.awt.Color(172, 182, 229));
-        deleteSupplier.setkStartColor(new java.awt.Color(116, 235, 213));
+        deleteSupplier.setkEndColor(new java.awt.Color(74, 0, 224));
+        deleteSupplier.setkStartColor(new java.awt.Color(142, 45, 226));
+        deleteSupplier.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                deleteSupplierMouseClicked(evt);
+            }
+        });
 
         jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/delete employee icon.png"))); // NOI18N
 
@@ -859,7 +1050,7 @@ public class HomePage extends javax.swing.JFrame {
                 .addGroup(suppliersHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(deleteSupplier, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(searchSupplier, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(137, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         suppliersHomeLayout.setVerticalGroup(
             suppliersHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -876,6 +1067,218 @@ public class HomePage extends javax.swing.JFrame {
         );
 
         suppliersTabbedPane.addTab("tab1", suppliersHome);
+
+        jLabel32.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(0, 51, 51));
+        jLabel32.setText("Enter Contact");
+
+        jLabel33.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(0, 51, 51));
+        jLabel33.setText("Enter Name");
+
+        jLabel34.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
+        jLabel34.setForeground(new java.awt.Color(0, 51, 51));
+        jLabel34.setText("Supplies");
+
+        supName.setBackground(new java.awt.Color(242, 242, 242));
+        supName.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
+
+        supContact.setBackground(new java.awt.Color(242, 242, 242));
+        supContact.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
+
+        supplies.setBackground(new java.awt.Color(242, 242, 242));
+        supplies.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
+
+        addSupButton.setBackground(new java.awt.Color(0, 0, 0));
+        addSupButton.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
+        addSupButton.setForeground(new java.awt.Color(255, 255, 255));
+        addSupButton.setText("Add Supplier");
+        addSupButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addSupButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout addSupLayout = new javax.swing.GroupLayout(addSup);
+        addSup.setLayout(addSupLayout);
+        addSupLayout.setHorizontalGroup(
+            addSupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(addSupLayout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addGroup(addSupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel34, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(addSupButton, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE))
+                .addGap(11, 11, 11)
+                .addGroup(addSupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(supName, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(supContact, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(supplies, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        addSupLayout.setVerticalGroup(
+            addSupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(addSupLayout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addGroup(addSupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(supName, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(addSupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(supContact, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(addSupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(supplies, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(52, 52, 52)
+                .addComponent(addSupButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        suppliersTabbedPane.addTab("tab2", addSup);
+
+        jLabel35.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(0, 51, 51));
+        jLabel35.setText("Enter Supplier ID");
+
+        delSupButton.setBackground(new java.awt.Color(0, 0, 0));
+        delSupButton.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
+        delSupButton.setForeground(new java.awt.Color(255, 255, 255));
+        delSupButton.setText("Delete");
+        delSupButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delSupButtonActionPerformed(evt);
+            }
+        });
+
+        supID.setBackground(new java.awt.Color(242, 242, 242));
+        supID.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
+
+        javax.swing.GroupLayout delSupLayout = new javax.swing.GroupLayout(delSup);
+        delSup.setLayout(delSupLayout);
+        delSupLayout.setHorizontalGroup(
+            delSupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(delSupLayout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addGroup(delSupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(delSupButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(49, 49, 49)
+                .addComponent(supID, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        delSupLayout.setVerticalGroup(
+            delSupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(delSupLayout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addGroup(delSupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(supID, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(delSupButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        suppliersTabbedPane.addTab("tab3", delSup);
+
+        jLabel36.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(0, 51, 51));
+        jLabel36.setText("Enter Supplier ID");
+
+        updateSupID.setBackground(new java.awt.Color(242, 242, 242));
+        updateSupID.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
+
+        jLabel37.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
+        jLabel37.setForeground(new java.awt.Color(0, 51, 51));
+        jLabel37.setText("Enter Name");
+
+        jLabel38.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
+        jLabel38.setForeground(new java.awt.Color(0, 51, 51));
+        jLabel38.setText("Enter Contact");
+
+        jLabel39.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
+        jLabel39.setForeground(new java.awt.Color(0, 51, 51));
+        jLabel39.setText("Supplies");
+
+        updatedSupName.setBackground(new java.awt.Color(242, 242, 242));
+        updatedSupName.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
+
+        updatedSupContact.setBackground(new java.awt.Color(242, 242, 242));
+        updatedSupContact.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
+
+        updatedSupSupplies.setBackground(new java.awt.Color(242, 242, 242));
+        updatedSupSupplies.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
+
+        updateSupButton.setBackground(new java.awt.Color(0, 0, 0));
+        updateSupButton.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
+        updateSupButton.setForeground(new java.awt.Color(255, 255, 255));
+        updateSupButton.setText("Update Info");
+        updateSupButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateSupButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout updateSupLayout = new javax.swing.GroupLayout(updateSup);
+        updateSup.setLayout(updateSupLayout);
+        updateSupLayout.setHorizontalGroup(
+            updateSupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, updateSupLayout.createSequentialGroup()
+                .addContainerGap(44, Short.MAX_VALUE)
+                .addGroup(updateSupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jLabel37, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel36, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel38, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel39, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(updateSupButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(35, 35, 35)
+                .addGroup(updateSupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(updateSupID, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(updatedSupName, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(updatedSupContact, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(updatedSupSupplies, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(476, 476, 476))
+        );
+        updateSupLayout.setVerticalGroup(
+            updateSupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(updateSupLayout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addGroup(updateSupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(updateSupID, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(updateSupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(updatedSupName, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(updateSupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(updatedSupContact, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(updateSupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(updatedSupSupplies, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addComponent(updateSupButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(356, Short.MAX_VALUE))
+        );
+
+        suppliersTabbedPane.addTab("tab4", updateSup);
+
+        javax.swing.GroupLayout searchSupLayout = new javax.swing.GroupLayout(searchSup);
+        searchSup.setLayout(searchSupLayout);
+        searchSupLayout.setHorizontalGroup(
+            searchSupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        searchSupLayout.setVerticalGroup(
+            searchSupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        suppliersTabbedPane.addTab("tab5", searchSup);
 
         javax.swing.GroupLayout suppliersTabLayout = new javax.swing.GroupLayout(suppliersTab);
         suppliersTab.setLayout(suppliersTabLayout);
@@ -1011,6 +1414,7 @@ public class HomePage extends javax.swing.JFrame {
 
     private void SuppliersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SuppliersMouseClicked
         mainTabbedPane.setSelectedIndex(2);
+        suppliersTabbedPane.setSelectedIndex(0); //Check if big is present
         Suppliers.setBackground(new Color(191,224,233));
         Employee.setBackground(new Color(0,172,228));
         Menu.setBackground(new Color(0,172,228));
@@ -1064,7 +1468,7 @@ public class HomePage extends javax.swing.JFrame {
     }//GEN-LAST:event_addEmpButtonActionPerformed
 
     private void addSupplierMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addSupplierMouseClicked
-        // TODO add your handling code here:
+        suppliersTabbedPane.setSelectedIndex(1);
     }//GEN-LAST:event_addSupplierMouseClicked
 
     private void delEmployeeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_delEmployeeMouseClicked
@@ -1081,10 +1485,58 @@ public class HomePage extends javax.swing.JFrame {
             
         }
         catch(SQLException se){
+            System.out.println(se);
+        }
+    }//GEN-LAST:event_delEmpButtonActionPerformed
+
+    private void updateEmpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateEmpButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_updateEmpButtonActionPerformed
+
+    private void searchEmpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchEmpButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchEmpButtonActionPerformed
+
+    private void addSupButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addSupButtonActionPerformed
+        String name = supName.getText();
+        long contact = Long.parseLong(supContact.getText());
+        String supply = supplies.getText();
+        try{
+            Connection connection=DriverManager.getConnection(DB_URL,USER,PASS);
+            Statement statement = connection.createStatement();
+            String query = "Insert into suppliers(Name, Contact_No, Description) " + "values('" + name+"', '"+contact+"', '"+supply+"')";
+            statement.executeUpdate(query);
+            
+            //Reocrd is inserting correctly. Validations are remaining
+        }
+        catch(SQLException se){
             se.printStackTrace();
         }
+    }//GEN-LAST:event_addSupButtonActionPerformed
+
+    private void delSupButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delSupButtonActionPerformed
+        final long id = Long.parseLong(supID.getText());
         
-    }//GEN-LAST:event_delEmpButtonActionPerformed
+        try{
+            Connection connection = DriverManager.getConnection(DB_URL,USER, PASS);
+            Statement statement = connection.createStatement();
+            String query = "Delete from suppliers where Supplier_ID="+id;
+            statement.executeUpdate(query);
+            
+        }
+        
+        catch(SQLException se){
+            
+        }
+    }//GEN-LAST:event_delSupButtonActionPerformed
+
+    private void deleteSupplierMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteSupplierMouseClicked
+        suppliersTabbedPane.setSelectedIndex(2);
+    }//GEN-LAST:event_deleteSupplierMouseClicked
+
+    private void updateSupButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateSupButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_updateSupButtonActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -1104,15 +1556,21 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JPanel addEmp;
     private javax.swing.JButton addEmpButton;
     private keeptoo.KGradientPanel addEmployee;
+    private javax.swing.JPanel addSup;
+    private javax.swing.JButton addSupButton;
     private keeptoo.KGradientPanel addSupplier;
     private javax.swing.JPanel backgroundPanel;
+    private javax.swing.JPanel delEmp;
     private javax.swing.JButton delEmpButton;
     private keeptoo.KGradientPanel delEmployee;
+    private javax.swing.JPanel delSup;
+    private javax.swing.JButton delSupButton;
     private keeptoo.KGradientPanel deleteSupplier;
     private javax.swing.JTextField empAddress;
     private javax.swing.JTextField empContact;
     private javax.swing.JTextField empDesgn;
     private javax.swing.JTextField empID;
+    private javax.swing.JTextField empID1;
     private javax.swing.JTextField empName;
     private javax.swing.JLabel emp_icon;
     private javax.swing.JLabel emp_text;
@@ -1138,6 +1596,20 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1145,7 +1617,6 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTabbedPane mainTabbedPane;
     private javax.swing.JPanel menuTab;
@@ -1158,15 +1629,35 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JLabel payment_icon;
     private javax.swing.JLabel payment_text;
     private javax.swing.JPanel paymentsTab;
+    private javax.swing.JPanel searchEmp;
+    private javax.swing.JButton searchEmpButton;
     private keeptoo.KGradientPanel searchEmployee;
+    private javax.swing.JPanel searchSup;
     private keeptoo.KGradientPanel searchSupplier;
+    private javax.swing.JTextField supContact;
+    private javax.swing.JTextField supID;
+    private javax.swing.JTextField supName;
     private javax.swing.JLabel supp_icon;
     private javax.swing.JLabel supp_text;
     private javax.swing.JPanel suppliersHome;
     private javax.swing.JPanel suppliersTab;
     private javax.swing.JTabbedPane suppliersTabbedPane;
+    private javax.swing.JTextField supplies;
     private javax.swing.JPanel titlePanel;
+    private javax.swing.JPanel updateEmp;
+    private javax.swing.JTextField updateEmpAdd;
+    private javax.swing.JButton updateEmpButton;
+    private javax.swing.JTextField updateEmpContact;
+    private javax.swing.JTextField updateEmpDesgn;
+    private javax.swing.JTextField updateEmpID;
+    private javax.swing.JTextField updateEmpName;
     private keeptoo.KGradientPanel updateEmployee;
+    private javax.swing.JPanel updateSup;
+    private javax.swing.JButton updateSupButton;
+    private javax.swing.JTextField updateSupID;
     private keeptoo.KGradientPanel updateSupplier;
+    private javax.swing.JTextField updatedSupContact;
+    private javax.swing.JTextField updatedSupName;
+    private javax.swing.JTextField updatedSupSupplies;
     // End of variables declaration//GEN-END:variables
 }

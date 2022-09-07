@@ -27,13 +27,6 @@ public class AdminLogin extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Admin Login");
         setResizable(false);
-        addWindowFocusListener(new java.awt.event.WindowFocusListener() {
-            public void windowGainedFocus(java.awt.event.WindowEvent evt) {
-            }
-            public void windowLostFocus(java.awt.event.WindowEvent evt) {
-                formWindowLostFocus(evt);
-            }
-        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Tempus Sans ITC", 1, 28)); // NOI18N
@@ -51,16 +44,16 @@ public class AdminLogin extends javax.swing.JFrame {
         passLabel.setText("Enter Password");
         getContentPane().add(passLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 230, -1, -1));
 
-        password.setBackground(new java.awt.Color(0, 0, 0,80));
+        password.setBackground(new java.awt.Color(242,242,242));
         password.setForeground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 230, 118, -1));
+        getContentPane().add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 230, 118, 30));
 
         errorLabel.setBackground(new java.awt.Color(0, 0, 0));
         errorLabel.setFont(new java.awt.Font("Viner Hand ITC", 0, 16)); // NOI18N
         errorLabel.setForeground(new java.awt.Color(255, 51, 51));
         getContentPane().add(errorLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 270, 150, 24));
 
-        jButton1.setBackground(new java.awt.Color(0, 0, 0,80));
+        jButton1.setBackground(new java.awt.Color(0, 0, 0));
         jButton1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Login");
@@ -91,6 +84,7 @@ public class AdminLogin extends javax.swing.JFrame {
             
             HomePage.main(new String[]{});
             errorLabel.setText("");
+            dispose();
             
         }
         else{
@@ -98,10 +92,6 @@ public class AdminLogin extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void formWindowLostFocus(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowLostFocus
-        // TODO add your handling code here:
-    }//GEN-LAST:event_formWindowLostFocus
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
