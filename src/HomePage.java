@@ -1,3 +1,4 @@
+
 import java.awt.Color;
 import java.sql.*;
 
@@ -6,15 +7,16 @@ import java.sql.*;
  * @author Atharv
  */
 public class HomePage extends javax.swing.JFrame {
+
     int xMouse, yMouse;
-    static final String DB_URL="jdbc:mysql://localhost/sai_leela_caterers";
+    static final String DB_URL = "jdbc:mysql://localhost/sai_leela_caterers";
     static final String USER = "root";
     static final String PASS = "1234";
     
     public HomePage() {
-        initComponents();  
+        initComponents();        
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -973,6 +975,11 @@ public class HomePage extends javax.swing.JFrame {
 
         searchSupplier.setkEndColor(new java.awt.Color(172, 182, 229));
         searchSupplier.setkStartColor(new java.awt.Color(116, 235, 213));
+        searchSupplier.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                searchSupplierMouseClicked(evt);
+            }
+        });
 
         jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/search icon.png"))); // NOI18N
 
@@ -1006,6 +1013,11 @@ public class HomePage extends javax.swing.JFrame {
 
         updateSupplier.setkEndColor(new java.awt.Color(172, 182, 229));
         updateSupplier.setkStartColor(new java.awt.Color(116, 235, 213));
+        updateSupplier.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                updateSupplierMouseClicked(evt);
+            }
+        });
 
         jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/update data icon.png"))); // NOI18N
 
@@ -1192,11 +1204,11 @@ public class HomePage extends javax.swing.JFrame {
 
         jLabel37.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
         jLabel37.setForeground(new java.awt.Color(0, 51, 51));
-        jLabel37.setText("Enter Name");
+        jLabel37.setText("Updated Name");
 
         jLabel38.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
         jLabel38.setForeground(new java.awt.Color(0, 51, 51));
-        jLabel38.setText("Enter Contact");
+        jLabel38.setText("Updated Contact");
 
         jLabel39.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
         jLabel39.setForeground(new java.awt.Color(0, 51, 51));
@@ -1387,49 +1399,49 @@ public class HomePage extends javax.swing.JFrame {
 
     private void PaymentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PaymentMouseClicked
         mainTabbedPane.setSelectedIndex(5);
-        Payment.setBackground(new Color(191,224,233));
-        Employee.setBackground(new Color(0,172,228));
-        Menu.setBackground(new Color(0,172,228));
-        Orders.setBackground(new Color(0,172,228));
-        Suppliers.setBackground(new Color(0,172,228));
+        Payment.setBackground(new Color(191, 224, 233));
+        Employee.setBackground(new Color(0, 172, 228));
+        Menu.setBackground(new Color(0, 172, 228));
+        Orders.setBackground(new Color(0, 172, 228));
+        Suppliers.setBackground(new Color(0, 172, 228));
     }//GEN-LAST:event_PaymentMouseClicked
 
     private void OrdersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OrdersMouseClicked
         mainTabbedPane.setSelectedIndex(4);
-        Orders.setBackground(new Color(191,224,233));
-        Employee.setBackground(new Color(0,172,228));
-        Menu.setBackground(new Color(0,172,228));
-        Suppliers.setBackground(new Color(0,172,228));
-        Payment.setBackground(new Color(0,172,228));
+        Orders.setBackground(new Color(191, 224, 233));
+        Employee.setBackground(new Color(0, 172, 228));
+        Menu.setBackground(new Color(0, 172, 228));
+        Suppliers.setBackground(new Color(0, 172, 228));
+        Payment.setBackground(new Color(0, 172, 228));
     }//GEN-LAST:event_OrdersMouseClicked
 
     private void MenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuMouseClicked
         mainTabbedPane.setSelectedIndex(3);
-        Menu.setBackground(new Color(191,224,233));
-        Employee.setBackground(new Color(0,172,228));
-        Suppliers.setBackground(new Color(0,172,228));
-        Orders.setBackground(new Color(0,172,228));
-        Payment.setBackground(new Color(0,172,228));
+        Menu.setBackground(new Color(191, 224, 233));
+        Employee.setBackground(new Color(0, 172, 228));
+        Suppliers.setBackground(new Color(0, 172, 228));
+        Orders.setBackground(new Color(0, 172, 228));
+        Payment.setBackground(new Color(0, 172, 228));
     }//GEN-LAST:event_MenuMouseClicked
 
     private void SuppliersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SuppliersMouseClicked
         mainTabbedPane.setSelectedIndex(2);
         suppliersTabbedPane.setSelectedIndex(0); //Check if big is present
-        Suppliers.setBackground(new Color(191,224,233));
-        Employee.setBackground(new Color(0,172,228));
-        Menu.setBackground(new Color(0,172,228));
-        Orders.setBackground(new Color(0,172,228));
-        Payment.setBackground(new Color(0,172,228));
+        Suppliers.setBackground(new Color(191, 224, 233));
+        Employee.setBackground(new Color(0, 172, 228));
+        Menu.setBackground(new Color(0, 172, 228));
+        Orders.setBackground(new Color(0, 172, 228));
+        Payment.setBackground(new Color(0, 172, 228));
     }//GEN-LAST:event_SuppliersMouseClicked
 
     private void EmployeeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EmployeeMouseClicked
         mainTabbedPane.setSelectedIndex(1);
         employeeTabbedPanel.setSelectedIndex(0); //Check if bug is present
-        Employee.setBackground(new Color(191,224,233));
-        Suppliers.setBackground(new Color(0,172,228));
-        Menu.setBackground(new Color(0,172,228));
-        Orders.setBackground(new Color(0,172,228));
-        Payment.setBackground(new Color(0,172,228));
+        Employee.setBackground(new Color(191, 224, 233));
+        Suppliers.setBackground(new Color(0, 172, 228));
+        Menu.setBackground(new Color(0, 172, 228));
+        Orders.setBackground(new Color(0, 172, 228));
+        Payment.setBackground(new Color(0, 172, 228));
     }//GEN-LAST:event_EmployeeMouseClicked
 
     private void titlePanelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_titlePanelMousePressed
@@ -1440,7 +1452,7 @@ public class HomePage extends javax.swing.JFrame {
     private void titlePanelMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_titlePanelMouseDragged
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
-        this.setLocation(x-xMouse, y-yMouse);
+        this.setLocation(x - xMouse, y - yMouse);
     }//GEN-LAST:event_titlePanelMouseDragged
 
     private void addEmployeeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addEmployeeMouseClicked
@@ -1454,15 +1466,14 @@ public class HomePage extends javax.swing.JFrame {
         final String address = empAddress.getText();
         final String designation = empDesgn.getText();
         
-        try{
-            Connection connection=DriverManager.getConnection(DB_URL,USER,PASS);
+        try {
+            Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
             Statement statement = connection.createStatement();
-            String query = "Insert into employees(Name, Contact_No, Address, Designation) " + "values('" + name+"', '"+contact+"', '"+address+"', '"+designation+"')";
+            String query = "Insert into employees(Name, Contact_No, Address, Designation) " + "values('" + name + "', '" + contact + "', '" + address + "', '" + designation + "')";
             statement.executeUpdate(query);
-            
+
             //Reocrd is inserting correctly. Validations are remaining
-        }
-        catch(SQLException se){
+        } catch (SQLException se) {
             se.printStackTrace();
         }
     }//GEN-LAST:event_addEmpButtonActionPerformed
@@ -1477,14 +1488,13 @@ public class HomePage extends javax.swing.JFrame {
 
     private void delEmpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delEmpButtonActionPerformed
         int empid = Integer.parseInt(empID.getText());
-        try{
-            Connection connection=DriverManager.getConnection(DB_URL,USER,PASS);
+        try {
+            Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
             Statement statement = connection.createStatement();
-            String query = "delete from employees where EMP_ID="+empid;
+            String query = "delete from employees where EMP_ID=" + empid;
             statement.executeUpdate(query);
             
-        }
-        catch(SQLException se){
+        } catch (SQLException se) {
             System.out.println(se);
         }
     }//GEN-LAST:event_delEmpButtonActionPerformed
@@ -1501,15 +1511,14 @@ public class HomePage extends javax.swing.JFrame {
         String name = supName.getText();
         long contact = Long.parseLong(supContact.getText());
         String supply = supplies.getText();
-        try{
-            Connection connection=DriverManager.getConnection(DB_URL,USER,PASS);
+        try {
+            Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
             Statement statement = connection.createStatement();
-            String query = "Insert into suppliers(Name, Contact_No, Description) " + "values('" + name+"', '"+contact+"', '"+supply+"')";
+            String query = "Insert into suppliers(Name, Contact_No, Description) " + "values('" + name + "', '" + contact + "', '" + supply + "')";
             statement.executeUpdate(query);
-            
+
             //Reocrd is inserting correctly. Validations are remaining
-        }
-        catch(SQLException se){
+        } catch (SQLException se) {
             se.printStackTrace();
         }
     }//GEN-LAST:event_addSupButtonActionPerformed
@@ -1517,15 +1526,13 @@ public class HomePage extends javax.swing.JFrame {
     private void delSupButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delSupButtonActionPerformed
         final long id = Long.parseLong(supID.getText());
         
-        try{
-            Connection connection = DriverManager.getConnection(DB_URL,USER, PASS);
+        try {
+            Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
             Statement statement = connection.createStatement();
-            String query = "Delete from suppliers where Supplier_ID="+id;
+            String query = "Delete from suppliers where Supplier_ID=" + id;
             statement.executeUpdate(query);
             
-        }
-        
-        catch(SQLException se){
+        } catch (SQLException se) {
             
         }
     }//GEN-LAST:event_delSupButtonActionPerformed
@@ -1538,6 +1545,14 @@ public class HomePage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_updateSupButtonActionPerformed
 
+    private void updateSupplierMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateSupplierMouseClicked
+        suppliersTabbedPane.setSelectedIndex(3);
+    }//GEN-LAST:event_updateSupplierMouseClicked
+
+    private void searchSupplierMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchSupplierMouseClicked
+        suppliersTabbedPane.setSelectedIndex(4);
+    }//GEN-LAST:event_searchSupplierMouseClicked
+    
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
