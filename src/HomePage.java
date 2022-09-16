@@ -1,7 +1,8 @@
 
-import java.awt.Color;
+ import java.awt.Color;
 import java.awt.Font;
 import java.sql.*;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -15,29 +16,22 @@ public class HomePage extends javax.swing.JFrame {
     static final String USER = "root";
     static final String PASS = "1234";
 
-//    public static void establishConnection(){
-//        try{
-//            Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
-//            Statement statement = connection.createStatement();
-//        }
-//        catch(SQLException se){
-//            se.printStackTrace();
-//        }
-//    }
+    public static Statement establishConnection() throws SQLException{
+
+            Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
+            Statement statement = connection.createStatement();   
+            return statement;
+    }
+    
     public HomePage() {
         initComponents();
-        menuTable.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 16));
-        menuTable.getTableHeader().setOpaque(false);
-        menuTable.getTableHeader().setBackground(new Color(32, 136, 203));
-        menuTable.getTableHeader().setForeground(new Color(255, 255, 255));
-        menuTable.setRowHeight(25);
-        menuTable.setShowGrid(false);
-        menuTable.setShowVerticalLines(false);
-        menuTable.setShowGrid(false);
-        menuTable.setShowHorizontalLines(false);
-        menuTable.setRowMargin(0);
-        menuTable.getColumnModel().setColumnMargin(0);
+        Methods methods = new Methods();
+        methods.designTable(menuTable, 25);
+        methods.designTable(supplierSearchTable, 25);
+        methods.designTable(employeeSearchTable, 25);
     }
+    
+    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -112,6 +106,8 @@ public class HomePage extends javax.swing.JFrame {
         jLabel31 = new javax.swing.JLabel();
         empID1 = new javax.swing.JTextField();
         searchEmpButton = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        employeeSearchTable = new javax.swing.JTable();
         suppliersTab = new javax.swing.JPanel();
         suppliersTabbedPane = new javax.swing.JTabbedPane();
         suppliersHomeTab = new javax.swing.JPanel();
@@ -153,6 +149,8 @@ public class HomePage extends javax.swing.JFrame {
         jLabel40 = new javax.swing.JLabel();
         searchSupID = new javax.swing.JTextField();
         searchSupButton = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        supplierSearchTable = new javax.swing.JTable();
         menuTab = new javax.swing.JPanel();
         menuTabbedPane = new javax.swing.JTabbedPane();
         menuHomeTab = new javax.swing.JPanel();
@@ -177,7 +175,31 @@ public class HomePage extends javax.swing.JFrame {
         menuTable = new javax.swing.JTable();
         jLabel47 = new javax.swing.JLabel();
         ordersTab = new javax.swing.JPanel();
+        ordersTabbedPane = new javax.swing.JTabbedPane();
+        orderHomeTab = new javax.swing.JPanel();
+        addEmployee1 = new keeptoo.KGradientPanel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
+        addEmployee2 = new keeptoo.KGradientPanel();
+        jLabel49 = new javax.swing.JLabel();
+        jLabel50 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel51 = new javax.swing.JLabel();
+        empID2 = new javax.swing.JTextField();
+        jLabel52 = new javax.swing.JLabel();
+        empID3 = new javax.swing.JTextField();
+        jLabel53 = new javax.swing.JLabel();
+        empID4 = new javax.swing.JTextField();
+        searchEmpButton1 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel54 = new javax.swing.JLabel();
+        jLabel55 = new javax.swing.JLabel();
+        jLabel56 = new javax.swing.JLabel();
+        empID5 = new javax.swing.JTextField();
+        empID6 = new javax.swing.JTextField();
+        empID7 = new javax.swing.JTextField();
+        searchEmpButton2 = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
         paymentsTab = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
 
@@ -548,6 +570,11 @@ public class HomePage extends javax.swing.JFrame {
         searchEmployee.setkEndColor(new java.awt.Color(74, 0, 224));
         searchEmployee.setkStartColor(new java.awt.Color(142, 45, 226));
         searchEmployee.setPreferredSize(new java.awt.Dimension(255, 112));
+        searchEmployee.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                searchEmployeeMouseClicked(evt);
+            }
+        });
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/search icon.png"))); // NOI18N
 
@@ -896,19 +923,61 @@ public class HomePage extends javax.swing.JFrame {
             }
         });
 
+        employeeSearchTable.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        employeeSearchTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Employee ID", "Name", "Contact", "Address", "Designation"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Long.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        employeeSearchTable.setFocusable(false);
+        employeeSearchTable.setRowHeight(30);
+        employeeSearchTable.setSelectionBackground(new java.awt.Color(237, 57, 95));
+        employeeSearchTable.getTableHeader().setReorderingAllowed(false);
+        jScrollPane4.setViewportView(employeeSearchTable);
+        if (employeeSearchTable.getColumnModel().getColumnCount() > 0) {
+            employeeSearchTable.getColumnModel().getColumn(0).setResizable(false);
+            employeeSearchTable.getColumnModel().getColumn(1).setResizable(false);
+            employeeSearchTable.getColumnModel().getColumn(2).setResizable(false);
+            employeeSearchTable.getColumnModel().getColumn(3).setResizable(false);
+            employeeSearchTable.getColumnModel().getColumn(4).setResizable(false);
+        }
+
         javax.swing.GroupLayout searchEmpTabLayout = new javax.swing.GroupLayout(searchEmpTab);
         searchEmpTab.setLayout(searchEmpTabLayout);
         searchEmpTabLayout.setHorizontalGroup(
             searchEmpTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(searchEmpTabLayout.createSequentialGroup()
-                .addGap(29, 29, 29)
                 .addGroup(searchEmpTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(searchEmpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(searchEmpTabLayout.createSequentialGroup()
-                        .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(43, 43, 43)
-                        .addComponent(empID1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(415, Short.MAX_VALUE))
+                        .addGap(29, 29, 29)
+                        .addGroup(searchEmpTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(searchEmpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(searchEmpTabLayout.createSequentialGroup()
+                                .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(43, 43, 43)
+                                .addComponent(empID1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(searchEmpTabLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 781, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
         searchEmpTabLayout.setVerticalGroup(
             searchEmpTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -919,7 +988,9 @@ public class HomePage extends javax.swing.JFrame {
                     .addComponent(empID1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(searchEmpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(495, Short.MAX_VALUE))
+                .addGap(29, 29, 29)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(356, Short.MAX_VALUE))
         );
 
         employeeTabbedPane.addTab("tab5", searchEmpTab);
@@ -1353,19 +1424,60 @@ public class HomePage extends javax.swing.JFrame {
             }
         });
 
+        supplierSearchTable.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        supplierSearchTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Supplier ID", "Name", "Contact", "Supplies"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        supplierSearchTable.setFocusable(false);
+        supplierSearchTable.setRowHeight(30);
+        supplierSearchTable.setSelectionBackground(new java.awt.Color(237, 57, 95));
+        supplierSearchTable.getTableHeader().setReorderingAllowed(false);
+        jScrollPane3.setViewportView(supplierSearchTable);
+        if (supplierSearchTable.getColumnModel().getColumnCount() > 0) {
+            supplierSearchTable.getColumnModel().getColumn(0).setResizable(false);
+            supplierSearchTable.getColumnModel().getColumn(1).setResizable(false);
+            supplierSearchTable.getColumnModel().getColumn(2).setResizable(false);
+            supplierSearchTable.getColumnModel().getColumn(3).setResizable(false);
+        }
+
         javax.swing.GroupLayout searchSupTabLayout = new javax.swing.GroupLayout(searchSupTab);
         searchSupTab.setLayout(searchSupTabLayout);
         searchSupTabLayout.setHorizontalGroup(
             searchSupTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(searchSupTabLayout.createSequentialGroup()
-                .addGap(29, 29, 29)
                 .addGroup(searchSupTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(searchSupButton, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(searchSupTabLayout.createSequentialGroup()
+                        .addGap(29, 29, 29)
                         .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(searchSupID, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(439, Short.MAX_VALUE))
+                        .addComponent(searchSupID, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(searchSupTabLayout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(searchSupButton, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(searchSupTabLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 781, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         searchSupTabLayout.setVerticalGroup(
             searchSupTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1374,9 +1486,11 @@ public class HomePage extends javax.swing.JFrame {
                 .addGroup(searchSupTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(searchSupID, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
+                .addGap(29, 29, 29)
                 .addComponent(searchSupButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(486, Short.MAX_VALUE))
+                .addGap(35, 35, 35)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(339, Short.MAX_VALUE))
         );
 
         suppliersTabbedPane.addTab("tab5", searchSupTab);
@@ -1631,6 +1745,7 @@ public class HomePage extends javax.swing.JFrame {
             menuTable.getColumnModel().getColumn(2).setResizable(false);
             menuTable.getColumnModel().getColumn(3).setResizable(false);
             menuTable.getColumnModel().getColumn(4).setResizable(false);
+            menuTable.getColumnModel().getColumn(4).setHeaderValue("Cost");
         }
 
         javax.swing.GroupLayout viewMenuTabLayout = new javax.swing.GroupLayout(viewMenuTab);
@@ -1678,23 +1793,286 @@ public class HomePage extends javax.swing.JFrame {
 
         ordersTab.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel5.setText("Orders Tab");
+        addEmployee1.setkEndColor(new java.awt.Color(74, 0, 224));
+        addEmployee1.setkStartColor(new java.awt.Color(142, 45, 226));
+        addEmployee1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addEmployee1MouseClicked(evt);
+            }
+        });
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/take order.png"))); // NOI18N
+
+        jLabel48.setFont(new java.awt.Font("Lucida Calligraphy", 0, 18)); // NOI18N
+        jLabel48.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel48.setText("View Orders");
+
+        javax.swing.GroupLayout addEmployee1Layout = new javax.swing.GroupLayout(addEmployee1);
+        addEmployee1.setLayout(addEmployee1Layout);
+        addEmployee1Layout.setHorizontalGroup(
+            addEmployee1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(addEmployee1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel5)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel48)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        addEmployee1Layout.setVerticalGroup(
+            addEmployee1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(addEmployee1Layout.createSequentialGroup()
+                .addGroup(addEmployee1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(addEmployee1Layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel5))
+                    .addGroup(addEmployee1Layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addComponent(jLabel48)))
+                .addContainerGap(32, Short.MAX_VALUE))
+        );
+
+        addEmployee2.setkEndColor(new java.awt.Color(74, 0, 224));
+        addEmployee2.setkStartColor(new java.awt.Color(142, 45, 226));
+        addEmployee2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addEmployee2MouseClicked(evt);
+            }
+        });
+
+        jLabel49.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/take order.png"))); // NOI18N
+
+        jLabel50.setFont(new java.awt.Font("Lucida Calligraphy", 0, 18)); // NOI18N
+        jLabel50.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel50.setText("Take Order");
+
+        javax.swing.GroupLayout addEmployee2Layout = new javax.swing.GroupLayout(addEmployee2);
+        addEmployee2.setLayout(addEmployee2Layout);
+        addEmployee2Layout.setHorizontalGroup(
+            addEmployee2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(addEmployee2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel49)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel50)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        addEmployee2Layout.setVerticalGroup(
+            addEmployee2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(addEmployee2Layout.createSequentialGroup()
+                .addGroup(addEmployee2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(addEmployee2Layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel49))
+                    .addGroup(addEmployee2Layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addComponent(jLabel50)))
+                .addContainerGap(32, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout orderHomeTabLayout = new javax.swing.GroupLayout(orderHomeTab);
+        orderHomeTab.setLayout(orderHomeTabLayout);
+        orderHomeTabLayout.setHorizontalGroup(
+            orderHomeTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(orderHomeTabLayout.createSequentialGroup()
+                .addGap(458, 458, 458)
+                .addComponent(addEmployee1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(93, 93, 93))
+            .addGroup(orderHomeTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(orderHomeTabLayout.createSequentialGroup()
+                    .addGap(64, 64, 64)
+                    .addComponent(addEmployee2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(487, 487, 487)))
+        );
+        orderHomeTabLayout.setVerticalGroup(
+            orderHomeTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(orderHomeTabLayout.createSequentialGroup()
+                .addGap(92, 92, 92)
+                .addComponent(addEmployee1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(463, Short.MAX_VALUE))
+            .addGroup(orderHomeTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(orderHomeTabLayout.createSequentialGroup()
+                    .addGap(89, 89, 89)
+                    .addComponent(addEmployee2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(466, Short.MAX_VALUE)))
+        );
+
+        ordersTabbedPane.addTab("tab1", orderHomeTab);
+
+        jLabel51.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
+        jLabel51.setForeground(new java.awt.Color(0, 51, 51));
+        jLabel51.setText("Customer Name");
+
+        empID2.setBackground(new java.awt.Color(242, 242, 242));
+        empID2.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
+
+        jLabel52.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
+        jLabel52.setForeground(new java.awt.Color(0, 51, 51));
+        jLabel52.setText("Contact");
+
+        empID3.setBackground(new java.awt.Color(242, 242, 242));
+        empID3.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
+
+        jLabel53.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
+        jLabel53.setForeground(new java.awt.Color(0, 51, 51));
+        jLabel53.setText("Address");
+
+        empID4.setBackground(new java.awt.Color(242, 242, 242));
+        empID4.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
+
+        searchEmpButton1.setBackground(new java.awt.Color(0, 0, 0));
+        searchEmpButton1.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
+        searchEmpButton1.setForeground(new java.awt.Color(255, 255, 255));
+        searchEmpButton1.setText("Next");
+        searchEmpButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchEmpButton1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(searchEmpButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel52, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel51, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
+                            .addComponent(jLabel53, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(empID2, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(empID3, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(empID4, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(510, 510, 510))))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(48, 48, 48)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel51, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(empID2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel52, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(empID3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(empID4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33)
+                .addComponent(searchEmpButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(376, Short.MAX_VALUE))
+        );
+
+        ordersTabbedPane.addTab("tab2", jPanel3);
+
+        jLabel54.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
+        jLabel54.setForeground(new java.awt.Color(0, 51, 51));
+        jLabel54.setText("Event Time");
+
+        jLabel55.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
+        jLabel55.setForeground(new java.awt.Color(0, 51, 51));
+        jLabel55.setText("Event Date");
+
+        jLabel56.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
+        jLabel56.setForeground(new java.awt.Color(0, 51, 51));
+        jLabel56.setText("Expected People");
+
+        empID5.setBackground(new java.awt.Color(242, 242, 242));
+        empID5.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
+
+        empID6.setBackground(new java.awt.Color(242, 242, 242));
+        empID6.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
+
+        empID7.setBackground(new java.awt.Color(242, 242, 242));
+        empID7.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
+
+        searchEmpButton2.setBackground(new java.awt.Color(0, 0, 0));
+        searchEmpButton2.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
+        searchEmpButton2.setForeground(new java.awt.Color(255, 255, 255));
+        searchEmpButton2.setText("Next");
+        searchEmpButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchEmpButton2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(searchEmpButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel56)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel55)
+                            .addComponent(jLabel54))
+                        .addGap(63, 63, 63)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(empID5, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(empID6, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(empID7, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(499, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(52, 52, 52)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel55, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(empID5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel54, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(empID7, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel56, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(empID6, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(44, 44, 44)
+                .addComponent(searchEmpButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(389, Short.MAX_VALUE))
+        );
+
+        ordersTabbedPane.addTab("tab3", jPanel2);
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        ordersTabbedPane.addTab("tab4", jPanel4);
 
         javax.swing.GroupLayout ordersTabLayout = new javax.swing.GroupLayout(ordersTab);
         ordersTab.setLayout(ordersTabLayout);
         ordersTabLayout.setHorizontalGroup(
             ordersTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ordersTabLayout.createSequentialGroup()
-                .addContainerGap(761, Short.MAX_VALUE)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addGroup(ordersTabLayout.createSequentialGroup()
+                .addComponent(ordersTabbedPane, javax.swing.GroupLayout.PREFERRED_SIZE, 809, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 55, Short.MAX_VALUE))
         );
         ordersTabLayout.setVerticalGroup(
             ordersTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ordersTabLayout.createSequentialGroup()
-                .addContainerGap(612, Short.MAX_VALUE)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(73, 73, 73))
+            .addGroup(ordersTabLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(ordersTabbedPane, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         mainTabbedPane.addTab("tab4", ordersTab);
@@ -1844,11 +2222,49 @@ public class HomePage extends javax.swing.JFrame {
     }//GEN-LAST:event_delEmpButtonActionPerformed
 
     private void updateEmpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateEmpButtonActionPerformed
-        // TODO add your handling code here:
+        int id = Integer.parseInt(updateEmpID.getText());
+        String name = updateEmpName.getText();
+        long contact = Long.parseLong(updateEmpContact.getText());
+        String address = updateEmpAdd.getText();
+        String designation = updateEmpDesgn.getText();
+         try {
+            Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
+            Statement statement = connection.createStatement();
+            String query = "update employees set Name='"+name+"', Contact_no="+contact+", Address='"+address+"', Designati"
+                    + "on='"+designation+"' where Emp_ID="+id;
+            statement.executeUpdate(query);
+         }
+         catch(SQLException se){
+             se.printStackTrace();
+         }
     }//GEN-LAST:event_updateEmpButtonActionPerformed
 
     private void searchEmpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchEmpButtonActionPerformed
-        // TODO add your handling code here:
+        int ID = Integer.parseInt(empID1.getText()); 
+        try{
+            Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
+            Statement statement = connection.createStatement();
+            String query = "select * from employees where Emp_ID="+ID;
+            ResultSet rs = statement.executeQuery(query);
+            DefaultTableModel model = (DefaultTableModel) employeeSearchTable.getModel();
+            int rowCount = model.getRowCount();
+            if(rowCount ==1){
+                model.removeRow(0);
+            }
+            while(rs.next()){
+                String empID1 = String.valueOf(rs.getInt("Emp_ID")); 
+                String name = rs.getString("Name");
+                String contact = String.valueOf(rs.getLong("Contact_No"));
+                String address = rs.getString("Address");
+                String designation = rs.getString("Designation");
+                String[] tableContent = {empID1, name, contact, address , designation};
+                model.addRow(tableContent);
+            }
+            
+        }
+        catch(SQLException se){
+            se.printStackTrace();
+        }
     }//GEN-LAST:event_searchEmpButtonActionPerformed
 
     private void addSupButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addSupButtonActionPerformed
@@ -1886,7 +2302,21 @@ public class HomePage extends javax.swing.JFrame {
     }//GEN-LAST:event_deleteSupplierMouseClicked
 
     private void updateSupButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateSupButtonActionPerformed
-        // TODO add your handling code here:
+        int id = Integer.parseInt(updateSupID.getText());
+        String name = updatedSupName.getText();
+        long contact = Long.parseLong(updatedSupContact.getText());
+        String desc = updatedSupSupplies.getText();
+        
+        try{
+            Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
+            Statement statement = connection.createStatement();
+            String query = "update suppliers set Name='"+name+"', Contact_no="+contact+", Description='"+desc+"' where Supplier_ID="+id;
+            statement.executeUpdate(query);
+        }
+        catch(SQLException se){
+            se.printStackTrace();
+        }
+        
     }//GEN-LAST:event_updateSupButtonActionPerformed
 
     private void updateSupplierMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateSupplierMouseClicked
@@ -1895,10 +2325,35 @@ public class HomePage extends javax.swing.JFrame {
 
     private void searchSupplierMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchSupplierMouseClicked
         suppliersTabbedPane.setSelectedIndex(4);
+
     }//GEN-LAST:event_searchSupplierMouseClicked
 
     private void searchSupButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchSupButtonActionPerformed
-        // TODO add your handling code here:
+        int ID = Integer.parseInt(searchSupID.getText()); 
+        try{
+            Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
+            Statement statement = connection.createStatement();
+            String query = "select * from suppliers where Supplier_ID="+ID;
+            ResultSet rs = statement.executeQuery(query);
+            DefaultTableModel model = (DefaultTableModel) supplierSearchTable.getModel();
+            int rowCount = model.getRowCount();
+            if(rowCount ==1){
+                model.removeRow(0);
+            }
+            while(rs.next()){
+                String supID1 = String.valueOf(rs.getInt("Supplier_ID")); 
+                String name = rs.getString("Name");
+                String contact = String.valueOf(rs.getLong("Contact_No"));
+                String description = rs.getString("Description");
+                String[] tableContent = {supID1, name, contact, description};
+                model.addRow(tableContent);
+            }
+            
+        }
+        
+        catch(SQLException se){
+            se.printStackTrace();
+        }
     }//GEN-LAST:event_searchSupButtonActionPerformed
 
     private void addMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addMenuMouseClicked
@@ -1913,7 +2368,7 @@ public class HomePage extends javax.swing.JFrame {
             Statement statement = connection.createStatement();
             String query = "select * from menu";
             ResultSet rs = statement.executeQuery(query);
-           // ResultSetMetaData rsmd = rs.getMetaData();
+            // ResultSetMetaData rsmd = rs.getMetaData();
             DefaultTableModel model = (DefaultTableModel) menuTable.getModel();
 //            int col = rsmd.getColumnCount();
 //            String[] colName = new String[col];
@@ -1955,6 +2410,26 @@ public class HomePage extends javax.swing.JFrame {
 
     }//GEN-LAST:event_addMenuButtonActionPerformed
 
+    private void searchEmployeeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchEmployeeMouseClicked
+        employeeTabbedPane.setSelectedIndex(4);
+    }//GEN-LAST:event_searchEmployeeMouseClicked
+
+    private void addEmployee1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addEmployee1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addEmployee1MouseClicked
+
+    private void addEmployee2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addEmployee2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addEmployee2MouseClicked
+
+    private void searchEmpButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchEmpButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchEmpButton1ActionPerformed
+
+    private void searchEmpButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchEmpButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchEmpButton2ActionPerformed
+
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -1973,6 +2448,8 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JButton addEmpButton;
     private javax.swing.JPanel addEmpTab;
     private keeptoo.KGradientPanel addEmployee;
+    private keeptoo.KGradientPanel addEmployee1;
+    private keeptoo.KGradientPanel addEmployee2;
     private keeptoo.KGradientPanel addMenu;
     private javax.swing.JButton addMenuButton;
     private javax.swing.JPanel addMenuTab;
@@ -1992,10 +2469,17 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JTextField empDesgn;
     private javax.swing.JTextField empID;
     private javax.swing.JTextField empID1;
+    private javax.swing.JTextField empID2;
+    private javax.swing.JTextField empID3;
+    private javax.swing.JTextField empID4;
+    private javax.swing.JTextField empID5;
+    private javax.swing.JTextField empID6;
+    private javax.swing.JTextField empID7;
     private javax.swing.JTextField empName;
     private javax.swing.JLabel emp_icon;
     private javax.swing.JLabel emp_text;
     private javax.swing.JPanel employeeHomeTab;
+    private javax.swing.JTable employeeSearchTable;
     private javax.swing.JPanel employeeTab;
     private javax.swing.JTabbedPane employeeTabbedPane;
     private javax.swing.JPanel homeTab;
@@ -2041,13 +2525,27 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTabbedPane mainTabbedPane;
     private javax.swing.JPanel menuHomeTab;
@@ -2057,14 +2555,18 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JLabel menu_icon;
     private javax.swing.JLabel menu_text;
     private javax.swing.JPanel navigatorPanel;
+    private javax.swing.JPanel orderHomeTab;
     private javax.swing.JLabel order_icon;
     private javax.swing.JLabel order_text;
     private javax.swing.JPanel ordersTab;
+    private javax.swing.JTabbedPane ordersTabbedPane;
     private javax.swing.JLabel payment_icon;
     private javax.swing.JLabel payment_text;
     private javax.swing.JPanel paymentsTab;
     private javax.swing.JTextField plateName;
     private javax.swing.JButton searchEmpButton;
+    private javax.swing.JButton searchEmpButton1;
+    private javax.swing.JButton searchEmpButton2;
     private javax.swing.JPanel searchEmpTab;
     private keeptoo.KGradientPanel searchEmployee;
     private javax.swing.JButton searchSupButton;
@@ -2077,6 +2579,7 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JTextField supName;
     private javax.swing.JLabel supp_icon;
     private javax.swing.JLabel supp_text;
+    private javax.swing.JTable supplierSearchTable;
     private javax.swing.JPanel suppliersHomeTab;
     private javax.swing.JPanel suppliersTab;
     private javax.swing.JTabbedPane suppliersTabbedPane;

@@ -44,7 +44,7 @@ public class AdminLogin extends javax.swing.JFrame {
         passLabel.setText("Enter Password");
         getContentPane().add(passLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 230, -1, -1));
 
-        password.setBackground(new java.awt.Color(242,242,242));
+        password.setBackground(new java.awt.Color(77, 84, 84));
         password.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 230, 118, 30));
 
