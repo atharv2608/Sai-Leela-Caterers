@@ -1,17 +1,18 @@
 package panels;
+
 import java.sql.*;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.table.DefaultTableModel;
-import static panels.UpdateEmployePanel.DB_URL;
-import static panels.UpdateEmployePanel.PASS;
-import static panels.UpdateEmployePanel.USER;
+
 
 public class ViewSuppliersPanel extends javax.swing.JPanel {
+    Methods methods = new Methods();
     static final String DB_URL = "jdbc:mysql://localhost/sai_leela_caterers";
     static final String USER = "root";
     static final String PASS = "1234";
     public ViewSuppliersPanel() {
         initComponents();
+        methods.designTable(supplierSearchTable, 25);
     }
 
     @SuppressWarnings("unchecked")
@@ -33,7 +34,7 @@ public class ViewSuppliersPanel extends javax.swing.JPanel {
 
         jLabel40.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
         jLabel40.setForeground(new java.awt.Color(0, 51, 51));
-        jLabel40.setText("Enter ID of the Supplier");
+        jLabel40.setText("ID of the Supplier");
 
         searchSupButton.setBackground(new java.awt.Color(0, 0, 0));
         searchSupButton.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
@@ -84,10 +85,10 @@ public class ViewSuppliersPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(searchSupButton, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(supIDCombobox, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(507, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(16, Short.MAX_VALUE)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 781, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -124,7 +125,7 @@ public class ViewSuppliersPanel extends javax.swing.JPanel {
                 String supID1 = String.valueOf(rs.getInt("Supplier_ID"));
                 String name = rs.getString("Name");
                 String contact = String.valueOf(rs.getLong("Contact_No"));
-                String description = rs.getString("Description");
+                String description = rs.getString("Supplies");
                 String[] tableContent = {supID1, name, contact, description};
                 model.addRow(tableContent);
             }

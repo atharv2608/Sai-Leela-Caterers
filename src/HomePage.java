@@ -2,6 +2,7 @@
  import java.awt.Color;
 import java.awt.Font;
 import java.sql.*;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -27,8 +28,8 @@ public class HomePage extends javax.swing.JFrame {
         initComponents();
         Methods methods = new Methods();
         methods.designTable(menuTable, 25);
-        methods.designTable(supplierSearchTable, 25);
-        methods.designTable(employeeSearchTable, 25);
+//        methods.designTable(supplierSearchTable, 25);
+       // methods.designTable(employeeSearchTable, 25);
     }
     
     
@@ -88,16 +89,12 @@ public class HomePage extends javax.swing.JFrame {
         addEmpButton = new javax.swing.JButton();
         delEmpTab = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
-        empID = new javax.swing.JTextField();
         delEmpButton = new javax.swing.JButton();
+        empIDCombobox = new javax.swing.JComboBox<>();
         updateEmpTab = new javax.swing.JPanel();
         updateEmployePanel2 = new panels.UpdateEmployePanel();
         searchEmpTab = new javax.swing.JPanel();
-        jLabel31 = new javax.swing.JLabel();
-        empID1 = new javax.swing.JTextField();
-        searchEmpButton = new javax.swing.JButton();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        employeeSearchTable = new javax.swing.JTable();
+        viewEmployeesPanel2 = new panels.ViewEmployeesPanel();
         suppliersTab = new javax.swing.JPanel();
         suppliersTabbedPane = new javax.swing.JTabbedPane();
         suppliersHomeTab = new javax.swing.JPanel();
@@ -124,15 +121,11 @@ public class HomePage extends javax.swing.JFrame {
         delSupTab = new javax.swing.JPanel();
         jLabel35 = new javax.swing.JLabel();
         delSupButton = new javax.swing.JButton();
-        supID = new javax.swing.JTextField();
+        supIDCombobox = new javax.swing.JComboBox<>();
         updateSupTab = new javax.swing.JPanel();
         updateSupplierPanel1 = new panels.UpdateSupplierPanel();
         searchSupTab = new javax.swing.JPanel();
-        jLabel40 = new javax.swing.JLabel();
-        searchSupID = new javax.swing.JTextField();
-        searchSupButton = new javax.swing.JButton();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        supplierSearchTable = new javax.swing.JTable();
+        viewSuppliersPanel1 = new panels.ViewSuppliersPanel();
         menuTab = new javax.swing.JPanel();
         menuTabbedPane = new javax.swing.JTabbedPane();
         menuHomeTab = new javax.swing.JPanel();
@@ -597,6 +590,11 @@ public class HomePage extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Lucida Calligraphy", 0, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Update Employee");
+        jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel12MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout updateEmployeeLayout = new javax.swing.GroupLayout(updateEmployee);
         updateEmployee.setLayout(updateEmployeeLayout);
@@ -740,13 +738,15 @@ public class HomePage extends javax.swing.JFrame {
         employeeTabbedPane.addTab("tab2", addEmpTab);
 
         delEmpTab.setBackground(new java.awt.Color(255, 255, 255));
+        delEmpTab.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                delEmpTabMouseEntered(evt);
+            }
+        });
 
         jLabel17.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(0, 51, 51));
         jLabel17.setText("Enter ID of the Employee");
-
-        empID.setBackground(new java.awt.Color(242, 242, 242));
-        empID.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
 
         delEmpButton.setBackground(new java.awt.Color(0, 0, 0));
         delEmpButton.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
@@ -768,9 +768,9 @@ public class HomePage extends javax.swing.JFrame {
                     .addComponent(delEmpButton)
                     .addGroup(delEmpTabLayout.createSequentialGroup()
                         .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(43, 43, 43)
-                        .addComponent(empID, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(415, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(empIDCombobox, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(458, Short.MAX_VALUE))
         );
         delEmpTabLayout.setVerticalGroup(
             delEmpTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -778,10 +778,10 @@ public class HomePage extends javax.swing.JFrame {
                 .addGap(78, 78, 78)
                 .addGroup(delEmpTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(empID, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(empIDCombobox, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(61, 61, 61)
                 .addComponent(delEmpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(452, Short.MAX_VALUE))
         );
 
         employeeTabbedPane.addTab("tab3", delEmpTab);
@@ -809,91 +809,21 @@ public class HomePage extends javax.swing.JFrame {
 
         searchEmpTab.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel31.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
-        jLabel31.setForeground(new java.awt.Color(0, 51, 51));
-        jLabel31.setText("Enter ID of the Employee");
-
-        empID1.setBackground(new java.awt.Color(242, 242, 242));
-        empID1.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
-
-        searchEmpButton.setBackground(new java.awt.Color(0, 0, 0));
-        searchEmpButton.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
-        searchEmpButton.setForeground(new java.awt.Color(255, 255, 255));
-        searchEmpButton.setText("Search");
-        searchEmpButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchEmpButtonActionPerformed(evt);
-            }
-        });
-
-        employeeSearchTable.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        employeeSearchTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Employee ID", "Name", "Contact", "Address", "Designation"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Long.class, java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        employeeSearchTable.setFocusable(false);
-        employeeSearchTable.setRowHeight(30);
-        employeeSearchTable.setSelectionBackground(new java.awt.Color(237, 57, 95));
-        employeeSearchTable.getTableHeader().setReorderingAllowed(false);
-        jScrollPane4.setViewportView(employeeSearchTable);
-        if (employeeSearchTable.getColumnModel().getColumnCount() > 0) {
-            employeeSearchTable.getColumnModel().getColumn(0).setResizable(false);
-            employeeSearchTable.getColumnModel().getColumn(1).setResizable(false);
-            employeeSearchTable.getColumnModel().getColumn(2).setResizable(false);
-            employeeSearchTable.getColumnModel().getColumn(3).setResizable(false);
-            employeeSearchTable.getColumnModel().getColumn(4).setResizable(false);
-        }
-
         javax.swing.GroupLayout searchEmpTabLayout = new javax.swing.GroupLayout(searchEmpTab);
         searchEmpTab.setLayout(searchEmpTabLayout);
         searchEmpTabLayout.setHorizontalGroup(
             searchEmpTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(searchEmpTabLayout.createSequentialGroup()
-                .addGroup(searchEmpTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(searchEmpTabLayout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addGroup(searchEmpTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(searchEmpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(searchEmpTabLayout.createSequentialGroup()
-                                .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(43, 43, 43)
-                                .addComponent(empID1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(searchEmpTabLayout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 781, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(viewEmployeesPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         searchEmpTabLayout.setVerticalGroup(
             searchEmpTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(searchEmpTabLayout.createSequentialGroup()
-                .addGap(78, 78, 78)
-                .addGroup(searchEmpTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(empID1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(searchEmpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(356, Short.MAX_VALUE))
+                .addGap(30, 30, 30)
+                .addComponent(viewEmployeesPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(180, Short.MAX_VALUE))
         );
 
         employeeTabbedPane.addTab("tab5", searchEmpTab);
@@ -1177,10 +1107,15 @@ public class HomePage extends javax.swing.JFrame {
         suppliersTabbedPane.addTab("tab2", addSupTab);
 
         delSupTab.setBackground(new java.awt.Color(255, 255, 255));
+        delSupTab.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                delSupTabMouseEntered(evt);
+            }
+        });
 
         jLabel35.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
         jLabel35.setForeground(new java.awt.Color(0, 51, 51));
-        jLabel35.setText("Enter Supplier ID");
+        jLabel35.setText("Supplier ID");
 
         delSupButton.setBackground(new java.awt.Color(0, 0, 0));
         delSupButton.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
@@ -1192,9 +1127,6 @@ public class HomePage extends javax.swing.JFrame {
             }
         });
 
-        supID.setBackground(new java.awt.Color(242, 242, 242));
-        supID.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
-
         javax.swing.GroupLayout delSupTabLayout = new javax.swing.GroupLayout(delSupTab);
         delSupTab.setLayout(delSupTabLayout);
         delSupTabLayout.setHorizontalGroup(
@@ -1204,9 +1136,9 @@ public class HomePage extends javax.swing.JFrame {
                 .addGroup(delSupTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(delSupButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(49, 49, 49)
-                .addComponent(supID, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(47, 47, 47)
+                .addComponent(supIDCombobox, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(530, Short.MAX_VALUE))
         );
         delSupTabLayout.setVerticalGroup(
             delSupTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1214,10 +1146,10 @@ public class HomePage extends javax.swing.JFrame {
                 .addGap(46, 46, 46)
                 .addGroup(delSupTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(supID, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(supIDCombobox, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(delSupButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(527, Short.MAX_VALUE))
         );
 
         suppliersTabbedPane.addTab("tab3", delSupTab);
@@ -1245,90 +1177,20 @@ public class HomePage extends javax.swing.JFrame {
 
         searchSupTab.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel40.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
-        jLabel40.setForeground(new java.awt.Color(0, 51, 51));
-        jLabel40.setText("Enter ID of the Supplier");
-
-        searchSupID.setBackground(new java.awt.Color(242, 242, 242));
-        searchSupID.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
-
-        searchSupButton.setBackground(new java.awt.Color(0, 0, 0));
-        searchSupButton.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
-        searchSupButton.setForeground(new java.awt.Color(255, 255, 255));
-        searchSupButton.setText("Search");
-        searchSupButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchSupButtonActionPerformed(evt);
-            }
-        });
-
-        supplierSearchTable.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        supplierSearchTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Supplier ID", "Name", "Contact", "Supplies"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        supplierSearchTable.setFocusable(false);
-        supplierSearchTable.setRowHeight(30);
-        supplierSearchTable.setSelectionBackground(new java.awt.Color(237, 57, 95));
-        supplierSearchTable.getTableHeader().setReorderingAllowed(false);
-        jScrollPane3.setViewportView(supplierSearchTable);
-        if (supplierSearchTable.getColumnModel().getColumnCount() > 0) {
-            supplierSearchTable.getColumnModel().getColumn(0).setResizable(false);
-            supplierSearchTable.getColumnModel().getColumn(1).setResizable(false);
-            supplierSearchTable.getColumnModel().getColumn(2).setResizable(false);
-            supplierSearchTable.getColumnModel().getColumn(3).setResizable(false);
-        }
-
         javax.swing.GroupLayout searchSupTabLayout = new javax.swing.GroupLayout(searchSupTab);
         searchSupTab.setLayout(searchSupTabLayout);
         searchSupTabLayout.setHorizontalGroup(
             searchSupTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(searchSupTabLayout.createSequentialGroup()
-                .addGroup(searchSupTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(searchSupTabLayout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(searchSupID, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(searchSupTabLayout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(searchSupButton, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(searchSupTabLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 781, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addComponent(viewSuppliersPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 6, Short.MAX_VALUE))
         );
         searchSupTabLayout.setVerticalGroup(
             searchSupTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(searchSupTabLayout.createSequentialGroup()
-                .addGap(78, 78, 78)
-                .addGroup(searchSupTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(searchSupID, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addComponent(searchSupButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(339, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(viewSuppliersPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(204, Short.MAX_VALUE))
         );
 
         suppliersTabbedPane.addTab("tab5", searchSupTab);
@@ -2047,45 +1909,18 @@ public class HomePage extends javax.swing.JFrame {
     }//GEN-LAST:event_delEmployeeMouseClicked
 
     private void delEmpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delEmpButtonActionPerformed
-        int empid = Integer.parseInt(empID.getText());
+        int empid = Integer.parseInt(empIDCombobox.getSelectedItem().toString());
         try {
             Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
             Statement statement = connection.createStatement();
             String query = "delete from employees where EMP_ID=" + empid;
             statement.executeUpdate(query);
+            empIDCombobox.removeItemAt(empIDCombobox.getSelectedIndex());
 
         } catch (SQLException se) {
             System.out.println(se);
         }
     }//GEN-LAST:event_delEmpButtonActionPerformed
-
-    private void searchEmpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchEmpButtonActionPerformed
-        int ID = Integer.parseInt(empID1.getText()); 
-        try{
-            Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
-            Statement statement = connection.createStatement();
-            String query = "select * from employees where Emp_ID="+ID;
-            ResultSet rs = statement.executeQuery(query);
-            DefaultTableModel model = (DefaultTableModel) employeeSearchTable.getModel();
-            int rowCount = model.getRowCount();
-            if(rowCount ==1){
-                model.removeRow(0);
-            }
-            while(rs.next()){
-                String empID1 = String.valueOf(rs.getInt("Emp_ID")); 
-                String name = rs.getString("Name");
-                String contact = String.valueOf(rs.getLong("Contact_No"));
-                String address = rs.getString("Address");
-                String designation = rs.getString("Designation");
-                String[] tableContent = {empID1, name, contact, address , designation};
-                model.addRow(tableContent);
-            }
-            
-        }
-        catch(SQLException se){
-            se.printStackTrace();
-        }
-    }//GEN-LAST:event_searchEmpButtonActionPerformed
 
     private void addSupButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addSupButtonActionPerformed
         String name = supName.getText();
@@ -2104,13 +1939,14 @@ public class HomePage extends javax.swing.JFrame {
     }//GEN-LAST:event_addSupButtonActionPerformed
 
     private void delSupButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delSupButtonActionPerformed
-        final long id = Long.parseLong(supID.getText());
+        final long id = Long.parseLong(supIDCombobox.getSelectedItem().toString());
 
         try {
             Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
             Statement statement = connection.createStatement();
             String query = "Delete from suppliers where Supplier_ID=" + id;
             statement.executeUpdate(query);
+            supIDCombobox.removeItemAt(supIDCombobox.getSelectedIndex());
 
         } catch (SQLException se) {
 
@@ -2129,34 +1965,6 @@ public class HomePage extends javax.swing.JFrame {
         suppliersTabbedPane.setSelectedIndex(4);
 
     }//GEN-LAST:event_searchSupplierMouseClicked
-
-    private void searchSupButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchSupButtonActionPerformed
-        int ID = Integer.parseInt(searchSupID.getText()); 
-        try{
-            Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
-            Statement statement = connection.createStatement();
-            String query = "select * from suppliers where Supplier_ID="+ID;
-            ResultSet rs = statement.executeQuery(query);
-            DefaultTableModel model = (DefaultTableModel) supplierSearchTable.getModel();
-            int rowCount = model.getRowCount();
-            if(rowCount ==1){
-                model.removeRow(0);
-            }
-            while(rs.next()){
-                String supID1 = String.valueOf(rs.getInt("Supplier_ID")); 
-                String name = rs.getString("Name");
-                String contact = String.valueOf(rs.getLong("Contact_No"));
-                String description = rs.getString("Description");
-                String[] tableContent = {supID1, name, contact, description};
-                model.addRow(tableContent);
-            }
-            
-        }
-        
-        catch(SQLException se){
-            se.printStackTrace();
-        }
-    }//GEN-LAST:event_searchSupButtonActionPerformed
 
     private void addMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addMenuMouseClicked
         menuTabbedPane.setSelectedIndex(1);
@@ -2232,6 +2040,48 @@ public class HomePage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_searchEmpButton2ActionPerformed
 
+    private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
+        employeeTabbedPane.setSelectedIndex(3);
+    }//GEN-LAST:event_jLabel12MouseClicked
+
+    private void delSupTabMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_delSupTabMouseEntered
+        try {
+            Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
+            Statement statement = connection.createStatement();
+            String query = "select Supplier_ID from suppliers";
+            ResultSet resultSet = statement.executeQuery(query);
+
+            while (resultSet.next()) {
+                String id = String.valueOf(resultSet.getInt("Supplier_ID"));
+                if (((DefaultComboBoxModel) supIDCombobox.getModel()).getIndexOf(id) == -1) {
+                    supIDCombobox.addItem(id);
+                }
+            }
+
+        } catch (SQLException se) {
+            se.printStackTrace();
+        }
+    }//GEN-LAST:event_delSupTabMouseEntered
+
+    private void delEmpTabMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_delEmpTabMouseEntered
+        try {
+            Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
+            Statement statement = connection.createStatement();
+            String query = "select EMP_ID from employees";
+            ResultSet resultSet = statement.executeQuery(query);
+
+            while (resultSet.next()) {
+                String id = String.valueOf(resultSet.getInt("Emp_ID"));
+                if (((DefaultComboBoxModel) empIDCombobox.getModel()).getIndexOf(id) == -1) {
+                    empIDCombobox.addItem(id);
+                }
+            }
+
+        } catch (SQLException se) {
+            se.printStackTrace();
+        }
+    }//GEN-LAST:event_delEmpTabMouseEntered
+
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -2269,19 +2119,17 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JTextField empAddress;
     private javax.swing.JTextField empContact;
     private javax.swing.JTextField empDesgn;
-    private javax.swing.JTextField empID;
-    private javax.swing.JTextField empID1;
     private javax.swing.JTextField empID2;
     private javax.swing.JTextField empID3;
     private javax.swing.JTextField empID4;
     private javax.swing.JTextField empID5;
     private javax.swing.JTextField empID6;
     private javax.swing.JTextField empID7;
+    private javax.swing.JComboBox<String> empIDCombobox;
     private javax.swing.JTextField empName;
     private javax.swing.JLabel emp_icon;
     private javax.swing.JLabel emp_text;
     private javax.swing.JPanel employeeHomeTab;
-    private javax.swing.JTable employeeSearchTable;
     private javax.swing.JPanel employeeTab;
     private javax.swing.JTabbedPane employeeTabbedPane;
     private javax.swing.JPanel homeTab;
@@ -2304,13 +2152,11 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
@@ -2337,8 +2183,6 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTabbedPane mainTabbedPane;
     private javax.swing.JPanel menuHomeTab;
@@ -2357,22 +2201,18 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JLabel payment_text;
     private javax.swing.JPanel paymentsTab;
     private javax.swing.JTextField plateName;
-    private javax.swing.JButton searchEmpButton;
     private javax.swing.JButton searchEmpButton1;
     private javax.swing.JButton searchEmpButton2;
     private javax.swing.JPanel searchEmpTab;
     private keeptoo.KGradientPanel searchEmployee;
-    private javax.swing.JButton searchSupButton;
-    private javax.swing.JTextField searchSupID;
     private javax.swing.JPanel searchSupTab;
     private keeptoo.KGradientPanel searchSupplier;
     private javax.swing.JTextField starter;
     private javax.swing.JTextField supContact;
-    private javax.swing.JTextField supID;
+    private javax.swing.JComboBox<String> supIDCombobox;
     private javax.swing.JTextField supName;
     private javax.swing.JLabel supp_icon;
     private javax.swing.JLabel supp_text;
-    private javax.swing.JTable supplierSearchTable;
     private javax.swing.JPanel suppliersHomeTab;
     private javax.swing.JPanel suppliersTab;
     private javax.swing.JTabbedPane suppliersTabbedPane;
@@ -2384,8 +2224,10 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JPanel updateSupTab;
     private keeptoo.KGradientPanel updateSupplier;
     private panels.UpdateSupplierPanel updateSupplierPanel1;
+    private panels.ViewEmployeesPanel viewEmployeesPanel2;
     private keeptoo.KGradientPanel viewMenu;
     private javax.swing.JPanel viewMenuTab;
+    private panels.ViewSuppliersPanel viewSuppliersPanel1;
     private javax.swing.JTextField welcomeDrink;
     // End of variables declaration//GEN-END:variables
 }
