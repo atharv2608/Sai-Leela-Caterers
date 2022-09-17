@@ -1132,18 +1132,18 @@
                             <DimensionLayout dim="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
                                       <Component id="updateEmployePanel2" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace pref="210" max="32767" attributes="0"/>
+                                      <EmptySpace pref="232" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
                             <DimensionLayout dim="1">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
                                       <Component id="updateEmployePanel2" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace pref="183" max="32767" attributes="0"/>
+                                      <EmptySpace pref="215" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -1908,157 +1908,25 @@
                           <Layout>
                             <DimensionLayout dim="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace pref="44" max="32767" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="jLabel37" max="32767" attributes="0"/>
-                                          <Component id="jLabel36" max="32767" attributes="0"/>
-                                          <Component id="jLabel38" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jLabel39" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="updateSupButton" alignment="0" max="32767" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="updateSupID" min="-2" pref="116" max="-2" attributes="0"/>
-                                          <Component id="updatedSupName" min="-2" pref="116" max="-2" attributes="0"/>
-                                          <Component id="updatedSupContact" min="-2" pref="116" max="-2" attributes="0"/>
-                                          <Component id="updatedSupSupplies" min="-2" pref="116" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="476" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="updateSupplierPanel1" min="-2" pref="685" max="-2" attributes="0"/>
+                                      <EmptySpace pref="118" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
                             <DimensionLayout dim="1">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel36" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                          <Component id="updateSupID" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel37" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                          <Component id="updatedSupName" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel38" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                          <Component id="updatedSupContact" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel39" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                          <Component id="updatedSupSupplies" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="updateSupButton" min="-2" pref="41" max="-2" attributes="0"/>
-                                      <EmptySpace pref="356" max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                                      <Component id="updateSupplierPanel1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace pref="204" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
                           </Layout>
                           <SubComponents>
-                            <Component class="javax.swing.JLabel" name="jLabel36">
-                              <Properties>
-                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Lucida Calligraphy" size="14" style="0"/>
-                                </Property>
-                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                  <Color blue="33" green="33" red="0" type="rgb"/>
-                                </Property>
-                                <Property name="text" type="java.lang.String" value="Enter Supplier ID"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JTextField" name="updateSupID">
-                              <Properties>
-                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                  <Color blue="f2" green="f2" red="f2" type="rgb"/>
-                                </Property>
-                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Times New Roman" size="15" style="0"/>
-                                </Property>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JLabel" name="jLabel37">
-                              <Properties>
-                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Lucida Calligraphy" size="14" style="0"/>
-                                </Property>
-                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                  <Color blue="33" green="33" red="0" type="rgb"/>
-                                </Property>
-                                <Property name="text" type="java.lang.String" value="Updated Name"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JLabel" name="jLabel38">
-                              <Properties>
-                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Lucida Calligraphy" size="14" style="0"/>
-                                </Property>
-                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                  <Color blue="33" green="33" red="0" type="rgb"/>
-                                </Property>
-                                <Property name="text" type="java.lang.String" value="Updated Contact"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JLabel" name="jLabel39">
-                              <Properties>
-                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Lucida Calligraphy" size="14" style="0"/>
-                                </Property>
-                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                  <Color blue="33" green="33" red="0" type="rgb"/>
-                                </Property>
-                                <Property name="text" type="java.lang.String" value="Supplies"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JTextField" name="updatedSupName">
-                              <Properties>
-                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                  <Color blue="f2" green="f2" red="f2" type="rgb"/>
-                                </Property>
-                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Times New Roman" size="15" style="0"/>
-                                </Property>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JTextField" name="updatedSupContact">
-                              <Properties>
-                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                  <Color blue="f2" green="f2" red="f2" type="rgb"/>
-                                </Property>
-                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Times New Roman" size="15" style="0"/>
-                                </Property>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JTextField" name="updatedSupSupplies">
-                              <Properties>
-                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                  <Color blue="f2" green="f2" red="f2" type="rgb"/>
-                                </Property>
-                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Times New Roman" size="15" style="0"/>
-                                </Property>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JButton" name="updateSupButton">
-                              <Properties>
-                                <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                                  <Connection code="new java.awt.Color(0, 0, 0)" type="code"/>
-                                </Property>
-                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Segoe UI Emoji" size="14" style="0"/>
-                                </Property>
-                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                                </Property>
-                                <Property name="text" type="java.lang.String" value="Update Info"/>
-                              </Properties>
-                              <Events>
-                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="updateSupButtonActionPerformed"/>
-                              </Events>
+                            <Component class="panels.UpdateSupplierPanel" name="updateSupplierPanel1">
                             </Component>
                           </SubComponents>
                         </Container>

@@ -126,15 +126,7 @@ public class HomePage extends javax.swing.JFrame {
         delSupButton = new javax.swing.JButton();
         supID = new javax.swing.JTextField();
         updateSupTab = new javax.swing.JPanel();
-        jLabel36 = new javax.swing.JLabel();
-        updateSupID = new javax.swing.JTextField();
-        jLabel37 = new javax.swing.JLabel();
-        jLabel38 = new javax.swing.JLabel();
-        jLabel39 = new javax.swing.JLabel();
-        updatedSupName = new javax.swing.JTextField();
-        updatedSupContact = new javax.swing.JTextField();
-        updatedSupSupplies = new javax.swing.JTextField();
-        updateSupButton = new javax.swing.JButton();
+        updateSupplierPanel1 = new panels.UpdateSupplierPanel();
         searchSupTab = new javax.swing.JPanel();
         jLabel40 = new javax.swing.JLabel();
         searchSupID = new javax.swing.JTextField();
@@ -801,16 +793,16 @@ public class HomePage extends javax.swing.JFrame {
         updateEmpTabLayout.setHorizontalGroup(
             updateEmpTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(updateEmpTabLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
+                .addContainerGap()
                 .addComponent(updateEmployePanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(210, Short.MAX_VALUE))
+                .addContainerGap(232, Short.MAX_VALUE))
         );
         updateEmpTabLayout.setVerticalGroup(
             updateEmpTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(updateEmpTabLayout.createSequentialGroup()
-                .addGap(38, 38, 38)
+                .addContainerGap()
                 .addComponent(updateEmployePanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(183, Short.MAX_VALUE))
+                .addContainerGap(215, Short.MAX_VALUE))
         );
 
         employeeTabbedPane.addTab("tab4", updateEmpTab);
@@ -1232,86 +1224,21 @@ public class HomePage extends javax.swing.JFrame {
 
         updateSupTab.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel36.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
-        jLabel36.setForeground(new java.awt.Color(0, 51, 51));
-        jLabel36.setText("Enter Supplier ID");
-
-        updateSupID.setBackground(new java.awt.Color(242, 242, 242));
-        updateSupID.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
-
-        jLabel37.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
-        jLabel37.setForeground(new java.awt.Color(0, 51, 51));
-        jLabel37.setText("Updated Name");
-
-        jLabel38.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
-        jLabel38.setForeground(new java.awt.Color(0, 51, 51));
-        jLabel38.setText("Updated Contact");
-
-        jLabel39.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
-        jLabel39.setForeground(new java.awt.Color(0, 51, 51));
-        jLabel39.setText("Supplies");
-
-        updatedSupName.setBackground(new java.awt.Color(242, 242, 242));
-        updatedSupName.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
-
-        updatedSupContact.setBackground(new java.awt.Color(242, 242, 242));
-        updatedSupContact.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
-
-        updatedSupSupplies.setBackground(new java.awt.Color(242, 242, 242));
-        updatedSupSupplies.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
-
-        updateSupButton.setBackground(new java.awt.Color(0, 0, 0));
-        updateSupButton.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
-        updateSupButton.setForeground(new java.awt.Color(255, 255, 255));
-        updateSupButton.setText("Update Info");
-        updateSupButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                updateSupButtonActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout updateSupTabLayout = new javax.swing.GroupLayout(updateSupTab);
         updateSupTab.setLayout(updateSupTabLayout);
         updateSupTabLayout.setHorizontalGroup(
             updateSupTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, updateSupTabLayout.createSequentialGroup()
-                .addContainerGap(44, Short.MAX_VALUE)
-                .addGroup(updateSupTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jLabel37, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel36, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel38, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel39, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(updateSupButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(35, 35, 35)
-                .addGroup(updateSupTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(updateSupID, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(updatedSupName, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(updatedSupContact, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(updatedSupSupplies, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(476, 476, 476))
+            .addGroup(updateSupTabLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(updateSupplierPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 685, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(118, Short.MAX_VALUE))
         );
         updateSupTabLayout.setVerticalGroup(
             updateSupTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(updateSupTabLayout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addGroup(updateSupTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(updateSupID, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(updateSupTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(updatedSupName, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(updateSupTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(updatedSupContact, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(updateSupTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(updatedSupSupplies, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addComponent(updateSupButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(356, Short.MAX_VALUE))
+                .addGap(17, 17, 17)
+                .addComponent(updateSupplierPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(204, Short.MAX_VALUE))
         );
 
         suppliersTabbedPane.addTab("tab4", updateSupTab);
@@ -2194,24 +2121,6 @@ public class HomePage extends javax.swing.JFrame {
         suppliersTabbedPane.setSelectedIndex(2);
     }//GEN-LAST:event_deleteSupplierMouseClicked
 
-    private void updateSupButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateSupButtonActionPerformed
-        int id = Integer.parseInt(updateSupID.getText());
-        String name = updatedSupName.getText();
-        long contact = Long.parseLong(updatedSupContact.getText());
-        String desc = updatedSupSupplies.getText();
-        
-        try{
-            Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
-            Statement statement = connection.createStatement();
-            String query = "update suppliers set Name='"+name+"', Contact_no="+contact+", Description='"+desc+"' where Supplier_ID="+id;
-            statement.executeUpdate(query);
-        }
-        catch(SQLException se){
-            se.printStackTrace();
-        }
-        
-    }//GEN-LAST:event_updateSupButtonActionPerformed
-
     private void updateSupplierMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateSupplierMouseClicked
         suppliersTabbedPane.setSelectedIndex(3);
     }//GEN-LAST:event_updateSupplierMouseClicked
@@ -2400,10 +2309,6 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
@@ -2476,13 +2381,9 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JPanel updateEmpTab;
     private panels.UpdateEmployePanel updateEmployePanel2;
     private keeptoo.KGradientPanel updateEmployee;
-    private javax.swing.JButton updateSupButton;
-    private javax.swing.JTextField updateSupID;
     private javax.swing.JPanel updateSupTab;
     private keeptoo.KGradientPanel updateSupplier;
-    private javax.swing.JTextField updatedSupContact;
-    private javax.swing.JTextField updatedSupName;
-    private javax.swing.JTextField updatedSupSupplies;
+    private panels.UpdateSupplierPanel updateSupplierPanel1;
     private keeptoo.KGradientPanel viewMenu;
     private javax.swing.JPanel viewMenuTab;
     private javax.swing.JTextField welcomeDrink;

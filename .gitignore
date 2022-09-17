@@ -1,3 +1,5 @@
 /KGradientPanel-master/dist/
 /build/classes/*.class
 /build/classes/*.form
+/build/classes/panel/*.class
+/build/classes/panel/*.form
