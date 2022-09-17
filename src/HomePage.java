@@ -91,17 +91,7 @@ public class HomePage extends javax.swing.JFrame {
         empID = new javax.swing.JTextField();
         delEmpButton = new javax.swing.JButton();
         updateEmpTab = new javax.swing.JPanel();
-        jLabel26 = new javax.swing.JLabel();
-        updateEmpID = new javax.swing.JTextField();
-        jLabel27 = new javax.swing.JLabel();
-        updateEmpName = new javax.swing.JTextField();
-        jLabel28 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
-        updateEmpContact = new javax.swing.JTextField();
-        updateEmpAdd = new javax.swing.JTextField();
-        updateEmpDesgn = new javax.swing.JTextField();
-        updateEmpButton = new javax.swing.JButton();
+        updateEmployePanel1 = new panels.UpdateEmployePanel();
         searchEmpTab = new javax.swing.JPanel();
         jLabel31 = new javax.swing.JLabel();
         empID1 = new javax.swing.JTextField();
@@ -806,100 +796,21 @@ public class HomePage extends javax.swing.JFrame {
 
         updateEmpTab.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel26.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
-        jLabel26.setForeground(new java.awt.Color(0, 51, 51));
-        jLabel26.setText("Enter ID");
-
-        updateEmpID.setBackground(new java.awt.Color(242, 242, 242));
-        updateEmpID.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
-
-        jLabel27.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
-        jLabel27.setForeground(new java.awt.Color(0, 51, 51));
-        jLabel27.setText("Enter Name");
-
-        updateEmpName.setBackground(new java.awt.Color(242, 242, 242));
-        updateEmpName.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
-
-        jLabel28.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
-        jLabel28.setForeground(new java.awt.Color(0, 51, 51));
-        jLabel28.setText("Enter Contact");
-
-        jLabel29.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
-        jLabel29.setForeground(new java.awt.Color(0, 51, 51));
-        jLabel29.setText("Enter Address");
-
-        jLabel30.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
-        jLabel30.setForeground(new java.awt.Color(0, 51, 51));
-        jLabel30.setText("Enter Designation");
-
-        updateEmpContact.setBackground(new java.awt.Color(242, 242, 242));
-        updateEmpContact.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
-
-        updateEmpAdd.setBackground(new java.awt.Color(242, 242, 242));
-        updateEmpAdd.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
-
-        updateEmpDesgn.setBackground(new java.awt.Color(242, 242, 242));
-        updateEmpDesgn.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
-
-        updateEmpButton.setBackground(new java.awt.Color(0, 0, 0));
-        updateEmpButton.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
-        updateEmpButton.setForeground(new java.awt.Color(255, 255, 255));
-        updateEmpButton.setText("Update");
-        updateEmpButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                updateEmpButtonActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout updateEmpTabLayout = new javax.swing.GroupLayout(updateEmpTab);
         updateEmpTab.setLayout(updateEmpTabLayout);
         updateEmpTabLayout.setHorizontalGroup(
             updateEmpTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(updateEmpTabLayout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addGroup(updateEmpTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(updateEmpTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel28, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
-                        .addComponent(jLabel29, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE))
-                    .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(updateEmpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(updateEmpTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(updateEmpID, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(updateEmpName, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(updateEmpContact, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(updateEmpAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(updateEmpDesgn, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(497, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(updateEmployePanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(232, Short.MAX_VALUE))
         );
         updateEmpTabLayout.setVerticalGroup(
             updateEmpTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(updateEmpTabLayout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addGroup(updateEmpTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel26)
-                    .addComponent(updateEmpID, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(15, 15, 15)
-                .addGroup(updateEmpTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(updateEmpName, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(updateEmpTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(updateEmpContact, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(updateEmpTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(updateEmpAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(updateEmpTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(updateEmpDesgn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(47, 47, 47)
-                .addComponent(updateEmpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(298, Short.MAX_VALUE))
+                .addComponent(updateEmployePanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(206, Short.MAX_VALUE))
         );
 
         employeeTabbedPane.addTab("tab4", updateEmpTab);
@@ -2221,24 +2132,6 @@ public class HomePage extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_delEmpButtonActionPerformed
 
-    private void updateEmpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateEmpButtonActionPerformed
-        int id = Integer.parseInt(updateEmpID.getText());
-        String name = updateEmpName.getText();
-        long contact = Long.parseLong(updateEmpContact.getText());
-        String address = updateEmpAdd.getText();
-        String designation = updateEmpDesgn.getText();
-         try {
-            Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
-            Statement statement = connection.createStatement();
-            String query = "update employees set Name='"+name+"', Contact_no="+contact+", Address='"+address+"', Designati"
-                    + "on='"+designation+"' where Emp_ID="+id;
-            statement.executeUpdate(query);
-         }
-         catch(SQLException se){
-             se.printStackTrace();
-         }
-    }//GEN-LAST:event_updateEmpButtonActionPerformed
-
     private void searchEmpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchEmpButtonActionPerformed
         int ID = Integer.parseInt(empID1.getText()); 
         try{
@@ -2501,12 +2394,7 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
@@ -2585,13 +2473,8 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JTabbedPane suppliersTabbedPane;
     private javax.swing.JTextField supplies;
     private javax.swing.JPanel titlePanel;
-    private javax.swing.JTextField updateEmpAdd;
-    private javax.swing.JButton updateEmpButton;
-    private javax.swing.JTextField updateEmpContact;
-    private javax.swing.JTextField updateEmpDesgn;
-    private javax.swing.JTextField updateEmpID;
-    private javax.swing.JTextField updateEmpName;
     private javax.swing.JPanel updateEmpTab;
+    private panels.UpdateEmployePanel updateEmployePanel1;
     private keeptoo.KGradientPanel updateEmployee;
     private javax.swing.JButton updateSupButton;
     private javax.swing.JTextField updateSupID;
