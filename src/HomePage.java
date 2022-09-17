@@ -91,7 +91,7 @@ public class HomePage extends javax.swing.JFrame {
         empID = new javax.swing.JTextField();
         delEmpButton = new javax.swing.JButton();
         updateEmpTab = new javax.swing.JPanel();
-        updateEmployePanel1 = new panels.UpdateEmployePanel();
+        updateEmployePanel2 = new panels.UpdateEmployePanel();
         searchEmpTab = new javax.swing.JPanel();
         jLabel31 = new javax.swing.JLabel();
         empID1 = new javax.swing.JTextField();
@@ -801,16 +801,16 @@ public class HomePage extends javax.swing.JFrame {
         updateEmpTabLayout.setHorizontalGroup(
             updateEmpTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(updateEmpTabLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(updateEmployePanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(232, Short.MAX_VALUE))
+                .addGap(28, 28, 28)
+                .addComponent(updateEmployePanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(210, Short.MAX_VALUE))
         );
         updateEmpTabLayout.setVerticalGroup(
             updateEmpTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(updateEmpTabLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(updateEmployePanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(206, Short.MAX_VALUE))
+                .addGap(38, 38, 38)
+                .addComponent(updateEmployePanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(183, Short.MAX_VALUE))
         );
 
         employeeTabbedPane.addTab("tab4", updateEmpTab);
@@ -2474,7 +2474,7 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JTextField supplies;
     private javax.swing.JPanel titlePanel;
     private javax.swing.JPanel updateEmpTab;
-    private panels.UpdateEmployePanel updateEmployePanel1;
+    private panels.UpdateEmployePanel updateEmployePanel2;
     private keeptoo.KGradientPanel updateEmployee;
     private javax.swing.JButton updateSupButton;
     private javax.swing.JTextField updateSupID;

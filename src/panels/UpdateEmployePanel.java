@@ -168,14 +168,21 @@ public class UpdateEmployePanel extends javax.swing.JPanel {
 
     private void updateEmpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateEmpButtonActionPerformed
            
-        try {
+        int id = Integer.parseInt(empIDCombobox.getSelectedItem().toString());
+        String name = updatedEmpName.getText();
+        long contact = Long.parseLong(updatedEmpContact.getText());
+        String address = updatedEmpAdd.getText();
+        String designation = updatedEmpDesgn.getText();
+         try {
             Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
             Statement statement = connection.createStatement();
-            
-           }
-           catch(SQLException se){
-               
-           }
+            String query = "update employees set Name='"+name+"', Contact_no="+contact+", Address='"+address+"', Designati"
+                    + "on='"+designation+"' where Emp_ID="+id;
+            statement.executeUpdate(query);
+         }
+         catch(SQLException se){
+             se.printStackTrace();
+         }
     }//GEN-LAST:event_updateEmpButtonActionPerformed
 
     private void fetchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fetchButtonActionPerformed
