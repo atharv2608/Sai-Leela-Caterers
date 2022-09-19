@@ -4,6 +4,7 @@ import java.awt.Font;
 import java.sql.*;
 import java.text.SimpleDateFormat;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -77,15 +78,7 @@ public class HomePage extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         addEmpTab = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
-        empName = new javax.swing.JTextField();
-        jLabel14 = new javax.swing.JLabel();
-        empAddress = new javax.swing.JTextField();
-        jLabel15 = new javax.swing.JLabel();
-        empContact = new javax.swing.JTextField();
-        jLabel16 = new javax.swing.JLabel();
-        empDesgn = new javax.swing.JTextField();
-        addEmpButton = new javax.swing.JButton();
+        addEmployeePanel1 = new panels.AddEmployeePanel();
         delEmpTab = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         delEmpButton = new javax.swing.JButton();
@@ -93,7 +86,7 @@ public class HomePage extends javax.swing.JFrame {
         updateEmpTab = new javax.swing.JPanel();
         updateEmployePanel2 = new panels.UpdateEmployePanel();
         searchEmpTab = new javax.swing.JPanel();
-        viewEmployeesPanel2 = new panels.ViewEmployeesPanel();
+        viewEmployeesPanel1 = new panels.ViewEmployeesPanel();
         suppliersTab = new javax.swing.JPanel();
         suppliersTabbedPane = new javax.swing.JTabbedPane();
         suppliersHomeTab = new javax.swing.JPanel();
@@ -117,6 +110,7 @@ public class HomePage extends javax.swing.JFrame {
         supContact = new javax.swing.JTextField();
         supplies = new javax.swing.JTextField();
         addSupButton = new javax.swing.JButton();
+        mainErrorLabel = new javax.swing.JLabel();
         delSupTab = new javax.swing.JPanel();
         jLabel35 = new javax.swing.JLabel();
         delSupButton = new javax.swing.JButton();
@@ -670,86 +664,21 @@ public class HomePage extends javax.swing.JFrame {
 
         addEmpTab.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel13.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(0, 51, 51));
-        jLabel13.setText("Enter Name");
-
-        empName.setBackground(new java.awt.Color(242, 242, 242));
-        empName.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
-
-        jLabel14.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(0, 51, 51));
-        jLabel14.setText("Designation");
-
-        empAddress.setBackground(new java.awt.Color(242, 242, 242));
-        empAddress.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
-
-        jLabel15.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(0, 51, 51));
-        jLabel15.setText("Enter Contact ");
-
-        empContact.setBackground(new java.awt.Color(242, 242, 242));
-        empContact.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
-
-        jLabel16.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(0, 51, 51));
-        jLabel16.setText("Enter Address");
-
-        empDesgn.setBackground(new java.awt.Color(242, 242, 242));
-        empDesgn.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
-
-        addEmpButton.setBackground(new java.awt.Color(0, 0, 0));
-        addEmpButton.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
-        addEmpButton.setForeground(new java.awt.Color(255, 255, 255));
-        addEmpButton.setText("Add Employee");
-        addEmpButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addEmpButtonActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout addEmpTabLayout = new javax.swing.GroupLayout(addEmpTab);
         addEmpTab.setLayout(addEmpTabLayout);
         addEmpTabLayout.setHorizontalGroup(
             addEmpTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addEmpTabLayout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addGroup(addEmpTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
-                    .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
-                    .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(addEmpButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(34, 34, 34)
-                .addGroup(addEmpTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(empName, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(empAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(empContact, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(empDesgn, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(482, 482, 482))
+            .addGroup(addEmpTabLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(addEmployeePanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 620, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(184, Short.MAX_VALUE))
         );
         addEmpTabLayout.setVerticalGroup(
             addEmpTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(addEmpTabLayout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addGroup(addEmpTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(empName, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(addEmpTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(empContact, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(19, 19, 19)
-                .addGroup(addEmpTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(empAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(addEmpTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(empDesgn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(54, 54, 54)
-                .addComponent(addEmpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(addEmployeePanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(169, Short.MAX_VALUE))
         );
 
         employeeTabbedPane.addTab("tab2", addEmpTab);
@@ -832,15 +761,15 @@ public class HomePage extends javax.swing.JFrame {
             searchEmpTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(searchEmpTabLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(viewEmployeesPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(viewEmployeesPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         searchEmpTabLayout.setVerticalGroup(
             searchEmpTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(searchEmpTabLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(viewEmployeesPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(180, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(viewEmployeesPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(192, Short.MAX_VALUE))
         );
 
         employeeTabbedPane.addTab("tab5", searchEmpTab);
@@ -1083,6 +1012,10 @@ public class HomePage extends javax.swing.JFrame {
             }
         });
 
+        mainErrorLabel.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
+        mainErrorLabel.setForeground(new java.awt.Color(255, 0, 51));
+        mainErrorLabel.setText("Please");
+
         javax.swing.GroupLayout addSupTabLayout = new javax.swing.GroupLayout(addSupTab);
         addSupTab.setLayout(addSupTabLayout);
         addSupTabLayout.setHorizontalGroup(
@@ -1094,12 +1027,17 @@ public class HomePage extends javax.swing.JFrame {
                     .addComponent(jLabel32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel34, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(addSupButton, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE))
-                .addGap(11, 11, 11)
-                .addGroup(addSupTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(supName, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(supContact, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(supplies, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(addSupTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(addSupTabLayout.createSequentialGroup()
+                        .addGap(11, 11, 11)
+                        .addGroup(addSupTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(supName, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(supContact, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(supplies, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(addSupTabLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(mainErrorLabel)))
+                .addContainerGap(514, Short.MAX_VALUE))
         );
         addSupTabLayout.setVerticalGroup(
             addSupTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1117,8 +1055,10 @@ public class HomePage extends javax.swing.JFrame {
                     .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(supplies, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(52, 52, 52)
-                .addComponent(addSupButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(addSupTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(addSupButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mainErrorLabel))
+                .addContainerGap(387, Short.MAX_VALUE))
         );
 
         suppliersTabbedPane.addTab("tab2", addSupTab);
@@ -1776,6 +1716,12 @@ public class HomePage extends javax.swing.JFrame {
 
         ordersTabbedPane.addTab("tab3", jPanel2);
 
+        jPanel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanel4MouseEntered(evt);
+            }
+        });
+
         jLabel28.setFont(new java.awt.Font("Lucida Handwriting", 0, 22)); // NOI18N
         jLabel28.setForeground(new java.awt.Color(255, 156, 186));
         jLabel28.setText("Order  Details");
@@ -2043,35 +1989,6 @@ public class HomePage extends javax.swing.JFrame {
         employeeTabbedPane.setSelectedIndex(1);
     }//GEN-LAST:event_addEmployeeMouseClicked
 
-    private void addEmpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addEmpButtonActionPerformed
-        final String name = empName.getText();
-        final String con = empContact.getText();
-        final long contact = Long.parseLong(con);
-        final String address = empAddress.getText();
-        final String designation = empDesgn.getText();
-
-        try {
-            Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
-            Statement statement = connection.createStatement();
-            String query = "Insert into employees(Name, Contact_No, Address, Designation) " + "values('" + name + "', '" + contact + "', '" + address + "', '" + designation + "')";
-            statement.executeUpdate(query);
-
-            //Reocrd is inserting correctly. Validations are remaining
-        } catch (SQLException se) {
-            se.printStackTrace();
-        }
-        new java.util.Timer().schedule(
-                new java.util.TimerTask() {
-            @Override
-            public void run() {
-                empName.setText("");
-                empContact.setText("");
-            }
-        },
-                3000
-        );
-    }//GEN-LAST:event_addEmpButtonActionPerformed
-
     private void addSupplierMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addSupplierMouseClicked
         suppliersTabbedPane.setSelectedIndex(1);
     }//GEN-LAST:event_addSupplierMouseClicked
@@ -2087,8 +2004,12 @@ public class HomePage extends javax.swing.JFrame {
             Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
             Statement statement = connection.createStatement();
             String query = "delete from employees where EMP_ID=" + empid;
-            statement.executeUpdate(query);
-            empIDCombobox.removeItemAt(empIDCombobox.getSelectedIndex());
+            int response = JOptionPane.showConfirmDialog(this,"Are you sure you want to delete?");
+                if(response == JOptionPane.YES_OPTION){
+                    statement.executeUpdate(query);
+                    empIDCombobox.removeItemAt(empIDCombobox.getSelectedIndex());
+                }
+            
 
         } catch (SQLException se) {
             System.out.println(se);
@@ -2097,18 +2018,38 @@ public class HomePage extends javax.swing.JFrame {
 
     private void addSupButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addSupButtonActionPerformed
         String name = supName.getText();
-        long contact = Long.parseLong(supContact.getText());
+        String con = supContact.getText();
         String supply = supplies.getText();
         try {
             Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
             Statement statement = connection.createStatement();
-            String query = "Insert into suppliers(Name, Contact_No, Description) " + "values('" + name + "', '" + contact + "', '" + supply + "')";
-            statement.executeUpdate(query);
+            
 
-            //Reocrd is inserting correctly. Validations are remaining
+            if(name.equals("") || con.equals("") || supply.equals("")){
+                mainErrorLabel.setText("Please fill details");
+            }
+            else{
+                long contact = Long.parseLong(con);
+                String query = "Insert into suppliers(Name, Contact_No, Supplies) " + "values('" + name + "', '" + contact + "', '" + supply + "')";
+                statement.executeUpdate(query);
+                JOptionPane.showMessageDialog(this, "Supplier Inserted",
+                                          "Successful",
+                                          JOptionPane.INFORMATION_MESSAGE);
+            }
         } catch (SQLException se) {
             se.printStackTrace();
         }
+        new java.util.Timer().schedule(
+            new java.util.TimerTask() {
+                @Override
+                public void run() {
+                    supName.setText("");
+                    supContact.setText("");
+                    supplies.setText("");
+                }
+            },
+            2000
+        );
     }//GEN-LAST:event_addSupButtonActionPerformed
 
     private void delSupButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delSupButtonActionPerformed
@@ -2118,9 +2059,12 @@ public class HomePage extends javax.swing.JFrame {
             Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
             Statement statement = connection.createStatement();
             String query = "Delete from suppliers where Supplier_ID=" + id;
-            statement.executeUpdate(query);
-            supIDCombobox.removeItemAt(supIDCombobox.getSelectedIndex());
-
+            int response = JOptionPane.showConfirmDialog(this,"Are you sure you want to delete?");
+                if(response == JOptionPane.YES_OPTION){
+                    statement.executeUpdate(query);
+                    supIDCombobox.removeItemAt(supIDCombobox.getSelectedIndex());
+                }
+            
         } catch (SQLException se) {
 
         }
@@ -2272,6 +2216,25 @@ public class HomePage extends javax.swing.JFrame {
 
     }//GEN-LAST:event_placeOrderButtonActionPerformed
 
+    private void jPanel4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseEntered
+        try {
+            Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
+            Statement statement = connection.createStatement();
+            String query = "select EMP_ID from employees";
+            ResultSet resultSet = statement.executeQuery(query);
+
+            while (resultSet.next()) {
+                String id = String.valueOf(resultSet.getInt("Emp_ID"));
+                if (((DefaultComboBoxModel) empIDCombobox.getModel()).getIndexOf(id) == -1) {
+                    empIDCombobox.addItem(id);
+                }
+            }
+
+        } catch (SQLException se) {
+            se.printStackTrace();
+        }
+    }//GEN-LAST:event_jPanel4MouseEntered
+
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -2287,11 +2250,11 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JLabel SLC_Logo;
     private javax.swing.JLabel SLC_Title;
     private javax.swing.JPanel Suppliers;
-    private javax.swing.JButton addEmpButton;
     private javax.swing.JPanel addEmpTab;
     private keeptoo.KGradientPanel addEmployee;
     private keeptoo.KGradientPanel addEmployee1;
     private keeptoo.KGradientPanel addEmployee2;
+    private panels.AddEmployeePanel addEmployeePanel1;
     private keeptoo.KGradientPanel addMenu;
     private javax.swing.JButton addMenuButton;
     private javax.swing.JPanel addMenuTab;
@@ -2311,11 +2274,7 @@ public class HomePage extends javax.swing.JFrame {
     private keeptoo.KGradientPanel deleteSupplier;
     private javax.swing.JTextField deliveryAddress;
     private javax.swing.JComboBox<String> deliveryComboBox;
-    private javax.swing.JTextField empAddress;
-    private javax.swing.JTextField empContact;
-    private javax.swing.JTextField empDesgn;
     private javax.swing.JComboBox<String> empIDCombobox;
-    private javax.swing.JTextField empName;
     private javax.swing.JLabel emp_icon;
     private javax.swing.JLabel emp_text;
     private javax.swing.JPanel employeeHomeTab;
@@ -2329,10 +2288,6 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
@@ -2388,6 +2343,7 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel mainErrorLabel;
     private javax.swing.JTabbedPane mainTabbedPane;
     private javax.swing.JPanel menuHomeTab;
     private javax.swing.JComboBox<String> menuIDCombobox;
@@ -2432,7 +2388,7 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JPanel updateSupTab;
     private keeptoo.KGradientPanel updateSupplier;
     private panels.UpdateSupplierPanel updateSupplierPanel1;
-    private panels.ViewEmployeesPanel viewEmployeesPanel2;
+    private panels.ViewEmployeesPanel viewEmployeesPanel1;
     private keeptoo.KGradientPanel viewMenu;
     private javax.swing.JPanel viewMenuTab;
     private panels.ViewSuppliersPanel viewSuppliersPanel1;

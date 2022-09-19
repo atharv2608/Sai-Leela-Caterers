@@ -25,6 +25,7 @@ public class ViewEmployeesPanel extends javax.swing.JPanel {
         employeeSearchTable = new javax.swing.JTable();
         empIDCombobox = new javax.swing.JComboBox<>();
 
+        setBackground(new java.awt.Color(255, 255, 255));
         addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 formMouseEntered(evt);

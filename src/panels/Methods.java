@@ -4,7 +4,9 @@ package panels;
 
 import java.awt.Color;
 import java.awt.Font;
+import javax.swing.JLabel;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableCellRenderer;
 
@@ -24,9 +26,15 @@ public class Methods {
         tableName.setRowMargin(0);
         tableName.getColumnModel().setColumnMargin(0);
         DefaultTableCellRenderer renderer = (DefaultTableCellRenderer)tableName.getDefaultRenderer(Object.class);
-        renderer.setHorizontalAlignment( SwingConstants.CENTER );
-
-        
+        renderer.setHorizontalAlignment( SwingConstants.CENTER );    
+    }
+    
+    public void allEmptyFields(JLabel errorLabel, JTextField ...textField){
+        for(JTextField textboxes: textField){
+            if(textboxes.getText().equals("")){
+                errorLabel.setText("Please Fill All Details");
+            }
+        }
     }
     
 }
