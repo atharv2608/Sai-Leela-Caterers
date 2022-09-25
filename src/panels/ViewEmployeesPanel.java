@@ -1,4 +1,3 @@
-
 package panels;
 import java.sql.*;
 import javax.swing.DefaultComboBoxModel;
@@ -111,6 +110,7 @@ public class ViewEmployeesPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void searchEmpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchEmpButtonActionPerformed
+
         int ID = Integer.parseInt(empIDCombobox.getSelectedItem().toString());
         try{
             Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
